@@ -1,0 +1,2 @@
+# CoMoS
+Cognitive Modeling Suite
