@@ -20,5 +20,12 @@ I can imagine that exotic and older models find their place in separate reposito
 Umut I suggest that you take over from Max in developing the software dissemination part
 on our website and how to link this to code.
 
+Next steps:
+* Decide on structure; How to we organize our code base?
+* Decide on framework: how much do we want to copy from CMS
+* How to make an impact with our work and maximize benefit?
+
+====
+
 
 
