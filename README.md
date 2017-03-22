@@ -12,7 +12,9 @@ Let's use PyTorch as the basis. We have CMS (to be replaced) and DRM (artificial
 starting point. The question is whether we want to have one large framework in which 
 all of this finds a place.
 
-Note that if CMS is developed well then it should be able to accept a DRM-style model
+We also want to integrate with Ebrain initiative
+
+Note that if CMS is developed well then it will be able to accept a DRM-style model
 as input.
 
 I can imagine that exotic and older models find their place in separate repositories.
