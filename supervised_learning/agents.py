@@ -61,8 +61,8 @@ class StatefulAgent(object):
         if self.cutoff and (self.counter % self.cutoff) == 0:
             self.optimizer.zero_grad()  # zero the gradient buffer
             self.loss.backward(retain_variables=True)
-            self.net.h0.detach()
-            self.net.c0.detach()
+            # self.net.h0.detach()
+            # self.net.c0.detach()
             self.optimizer.step()
 
             self.loss = Variable(torch.zeros(1))
