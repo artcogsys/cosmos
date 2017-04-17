@@ -1,9 +1,25 @@
 # CoMoS
 Cognitive Modeling Suite
 
-This is the starting point for the modeling work we will do within LII and beyond. Ideally,
-we have one framework in which we can build artificial brains that can be conditioned on
-data or used as the brains of RL agents. 
+This is the starting point for the modeling work we will do within LII and beyond. Ideally,we have one framework in which we can build artificial brains that can be conditioned on data or used as the brains of RL agents. 
+
+
+
+SETUP:
+
+We have separate packages that can depend on each other. E.g. analysis package, network package, supervised learning package, reinforcement learning package, DRM package, EBRAIN package, etc.
+
+Now represented at this top level but will become separate repos
+
+Each package should have sphinx documentation, unit tests, etc.
+
+Start with basic package for e.g. supervised learning. Then expand.
+
+
+https://docs.python.org/2/library/unittest.html
+https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/
+
+
 
 At the same time, we want to disseminate the state of the art models we have been 
 developing. The question is how to do this optimally.
@@ -12,9 +28,9 @@ Let's use PyTorch as the basis. We have CMS (to be replaced) and DRM (artificial
 starting point. The question is whether we want to have one large framework in which 
 all of this finds a place.
 
-We also want to integrate with Ebrain initiative
+We also want to integrate with Ebrain initiative.
 
-Note that if CMS is developed well then it will be able to accept a DRM-style model
+Note that if CMS is developed well then it should be able to accept a DRM-style model
 as input.
 
 I can imagine that exotic and older models find their place in separate repositories.
