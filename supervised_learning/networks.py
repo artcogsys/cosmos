@@ -33,6 +33,10 @@ class RNN(nn.Module):
     def reset(self):
         self.h0 = self.c0 = None
 
+    def detach_(self):
+        self.h0.detach_()
+        self.c0.detach_()
+
     def forward(self, x):
 
         # Set initial states

@@ -41,7 +41,7 @@ class UnitTest(unittest.TestCase):
 
     def test_stateful_network(self):
 
-        n_epochs = 30
+        n_epochs = 10
         batch_size = 20
 
         # create toy data - predict if the sum of the input at the previous time step is larger than 1.0
