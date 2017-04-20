@@ -1,13 +1,12 @@
 import unittest
 
-import chainer
 from chainer.datasets import TupleDataset
 
-from supervised_learning import networks
-from supervised_learning.agents import *
-from supervised_learning.models import *
-from supervised_learning.world import World
-from supervised_learning.iterators import RandomIterator, SequentialIterator
+import networks
+from agents import *
+from models import *
+from world import World
+from iterators import RandomIterator, SequentialIterator
 
 class UnitTest(unittest.TestCase):
 
