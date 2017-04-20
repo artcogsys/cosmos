@@ -51,8 +51,8 @@ class Model(Chain):
 
         return self.output_function(self.predictor(data)).data
 
-    def reset(self):
-        self.predictor.reset()
+    def reset_state(self):
+        self.predictor.reset_state()
 
 #####
 ## Classifier object

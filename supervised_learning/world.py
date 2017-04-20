@@ -31,7 +31,7 @@ class World(object):
 
         for epoch in tqdm.tqdm(xrange(n_epochs)):
 
-            map(lambda x: x.reset(), self.agents)
+            map(lambda x: x.reset_state(), self.agents)
 
             with chainer.using_config('train', True):
 
@@ -61,7 +61,7 @@ class World(object):
 
         test_loss =  np.zeros([1, self.n_agents])
 
-        map(lambda x: x.reset(), self.agents)
+        map(lambda x: x.reset_state(), self.agents)
 
         with chainer.using_config('train', False):
 

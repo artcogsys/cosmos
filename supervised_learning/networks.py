@@ -10,7 +10,7 @@ class MLP(Chain):
     def __call__(self, x):
         return self.l2(F.relu(self.l1(x)))
 
-    def reset(self):
+    def reset_state(self):
         pass
 
 class RNN(Chain):
@@ -22,5 +22,5 @@ class RNN(Chain):
 
         return self.fc(self.lstm(x))
 
-    def reset(self):
+    def reset_state(self):
         self.lstm.reset_state()

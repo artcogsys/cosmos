@@ -32,7 +32,7 @@ class Agent(object):
 
         return cuda.to_cpu(loss.data)
 
-    def reset(self):
+    def reset_state(self):
         """
         Stateless agents don't require a state reset
         :return:
@@ -94,6 +94,6 @@ class StatefulAgent(Agent):
 
         return cuda.to_cpu(_loss.data)
 
-    def reset(self):
-        self.model.reset()
+    def reset_state(self):
+        self.model.reset_state()
         self.counter = 0

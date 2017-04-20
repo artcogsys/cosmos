@@ -38,8 +38,6 @@ class UnitTest(unittest.TestCase):
         # run world in training mode
         train_loss, test_loss = world.train(train_iter, n_epochs=n_epochs, test_iter=test_iter)
 
-        print test_loss
-
 
     def test_stateful_network(self):
 
@@ -68,8 +66,6 @@ class UnitTest(unittest.TestCase):
         # run world in training mode
         train_loss, test_loss = world.train(train_iter, n_epochs=n_epochs, test_iter=test_iter)
 
-        print test_loss
-
 
     def test_gpu(self):
 
@@ -96,8 +92,6 @@ class UnitTest(unittest.TestCase):
 
         # run world in training mode
         train_loss, test_loss = world.train(train_iter, n_epochs=n_epochs, test_iter=test_iter)
-
-        print test_loss
 
 
 if __name__ == '__main__':
