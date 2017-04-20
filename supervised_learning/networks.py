@@ -1,10 +1,6 @@
-import chainer
 from chainer import Chain
 import chainer.links as L
 import chainer.functions as F
-from chainer.datasets import TupleDataset
-from chainer.iterators import SerialIterator
-
 
 class MLP(Chain):
 

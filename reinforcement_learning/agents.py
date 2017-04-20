@@ -3,7 +3,7 @@ import numpy as np
 import chainer.functions as F
 from chainer import Variable
 
-#### UNFINISHED!!!
+#### UNFINISHED!!! HOE WERKT HET MET STATELESS AGENTS??
 
 
 

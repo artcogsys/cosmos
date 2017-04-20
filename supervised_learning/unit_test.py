@@ -28,7 +28,7 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(net, chainer.optimizers.Adam(),
+        agent = StatelessAgent(net, chainer.optimizers.Adam(), gpu=-1,
                                loss_function=F.softmax_cross_entropy, output_function=F.softmax)
 
         # define world
@@ -41,7 +41,7 @@ class UnitTest(unittest.TestCase):
 
         n_epochs = 20
 
-        # create toy data - predict if the sum of the input is larger than 1.0
+        # create toy data - predict if the sum of the previous input is larger than 1.0
         def create_data():
             X = np.random.rand(1000, 2).astype('float32')
             T = (np.sum(X, 1) > 1.0)
@@ -56,7 +56,7 @@ class UnitTest(unittest.TestCase):
         net = networks.RNN(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatefulAgent(net, chainer.optimizers.Adam(), cutoff=train_iter.n_batches,
+        agent = StatefulAgent(net, chainer.optimizers.Adam(), cutoff=train_iter.n_batches, gpu=-1,
                               loss_function=F.softmax_cross_entropy, output_function=F.softmax)
 
         # define world
