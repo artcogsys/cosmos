@@ -1,22 +1,24 @@
 import numpy as np
 
-import chainer.functions as F
+import chainer
 from chainer import Variable
 from chainer import cuda
 
 class Agent(object):
 
-    def __init__(self, net, optimizer, gpu=-1, loss_function=F.MeanSquaredError, output_function=lambda x: x):
+    def __init__(self, model, optimizer, gpu=-1):
 
-        self.net = net
+        self.model = model
 
         self.optimizer = optimizer
-        self.optimizer.setup(self.net)
+        self.optimizer.setup(self.model)
 
-        self.xp = np if gpu == -1 else cuda.cupy
-
-        self.loss_function = loss_function
-        self.output_function = output_function
+        if gpu>=0:
+            self.xp = cuda.cupy
+            chainer.cuda.get_device(gpu).use()
+            self.model.to_gpu()
+        else:
+            self.xp = np
 
     def __call_(self, data):
         """
@@ -25,7 +27,7 @@ class Agent(object):
         :return: post-processed output
         """
 
-        return self.output_function(self.net(Variable(data[0])))
+        return self.model.predict(data)
 
     def train(self, data):
         raise NotImplementedError
@@ -37,7 +39,7 @@ class Agent(object):
         :return: loss
         """
 
-        loss = self.loss_function(self.net(Variable(data[0])), Variable(data[1]))
+        loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
 
         return loss.data
 
@@ -59,7 +61,7 @@ class StatelessAgent(Agent):
         """
 
         self.optimizer.zero_grads()  # zero the gradient buffer
-        loss = self.loss_function(self.net(Variable(self.xp.asarray(data[0]))), Variable(self.xp.asarray(data[1])))
+        loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
         loss.backward()
         self.optimizer.update()
 
@@ -67,9 +69,9 @@ class StatelessAgent(Agent):
 
 class StatefulAgent(Agent):
 
-    def __init__(self, net, optimizer, cutoff, gpu=-1, loss_function=F.MeanSquaredError, output_function=lambda x: x):
+    def __init__(self, model, optimizer, cutoff, gpu=-1):
 
-        super(StatefulAgent, self).__init__(net, optimizer, gpu, loss_function, output_function)
+        super(StatefulAgent, self).__init__(model, optimizer, gpu)
 
         self.cutoff = cutoff
         self.counter = 0
@@ -85,7 +87,7 @@ class StatefulAgent(Agent):
 
         self.counter += 1
 
-        _loss = self.loss_function(self.net(Variable(self.xp.asarray(data[0]))), Variable(self.xp.asarray(data[1])))
+        _loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
         self.loss += _loss
 
         if self.counter % self.cutoff == 0:
@@ -100,5 +102,5 @@ class StatefulAgent(Agent):
         return _loss.data
 
     def reset(self):
-        self.net.reset()
+        self.model.reset()
         self.counter = 0

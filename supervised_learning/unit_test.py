@@ -5,6 +5,7 @@ from chainer.datasets import TupleDataset
 
 from supervised_learning import networks
 from supervised_learning.agents import *
+from supervised_learning.models import *
 from supervised_learning.world import World
 from supervised_learning.iterators import RandomIterator, SequentialIterator
 
@@ -28,14 +29,15 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(net, chainer.optimizers.Adam(), gpu=-1,
-                               loss_function=F.softmax_cross_entropy, output_function=F.softmax)
+        agent = StatelessAgent(Classifier(net), chainer.optimizers.Adam(), gpu=-1)
 
         # define world
         world = World(agent)
 
         # run world in training mode
         train_loss, test_loss = world.train(train_iter, n_epochs=n_epochs, test_iter=test_iter)
+
+        print test_loss
 
     def test_stateful_network(self):
 
@@ -56,14 +58,15 @@ class UnitTest(unittest.TestCase):
         net = networks.RNN(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatefulAgent(net, chainer.optimizers.Adam(), cutoff=train_iter.n_batches, gpu=-1,
-                              loss_function=F.softmax_cross_entropy, output_function=F.softmax)
+        agent = StatefulAgent(Classifier(net), chainer.optimizers.Adam(), cutoff=train_iter.n_batches, gpu=-1)
 
         # define world
         world = World(agent)
 
         # run world in training mode
         train_loss, test_loss = world.train(train_iter, n_epochs=n_epochs, test_iter=test_iter)
+
+        print test_loss
 
 
 if __name__ == '__main__':

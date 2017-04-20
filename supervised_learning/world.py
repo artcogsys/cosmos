@@ -47,13 +47,13 @@ class World(object):
                 # store best model in case loss was minimized
                 for i in range(self.n_agents):
                     if test_loss[epoch,i] < min_loss[i]:
-                        _optimal_model[i] = copy.deepcopy(self.agents[i].net)
+                        _optimal_model[i] = copy.deepcopy(self.agents[i].model)
                         min_loss[i] = test_loss[epoch,i]
 
         # set models to optimal models based on test loss
         if validate:
             for i in range(self.n_agents):
-                self.agents[i].net = copy.deepcopy(_optimal_model[i])
+                self.agents[i].model = copy.deepcopy(_optimal_model[i])
 
         return train_loss, test_loss
 
