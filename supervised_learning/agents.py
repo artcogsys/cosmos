@@ -1,24 +1,12 @@
-import numpy as np
-
-import chainer
-import cupy
-from chainer import Variable
 
 class Agent(object):
 
-    def __init__(self, model, optimizer, gpu=-1):
+    def __init__(self, model, optimizer):
 
         self.model = model
 
         self.optimizer = optimizer
         self.optimizer.setup(self.model)
-
-        if gpu>=0:
-            self.xp = cupy
-            chainer.cuda.get_device(gpu).use()
-            self.model.to_gpu()
-        else:
-            self.xp = np
 
     def __call_(self, data):
         """
@@ -39,7 +27,7 @@ class Agent(object):
         :return: loss
         """
 
-        loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
+        loss = self.model(data)
 
         return loss.data
 
@@ -61,7 +49,7 @@ class StatelessAgent(Agent):
         """
 
         self.optimizer.zero_grads()  # zero the gradient buffer
-        loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
+        loss = self.model(data)
         loss.backward()
         self.optimizer.update()
 
@@ -69,14 +57,14 @@ class StatelessAgent(Agent):
 
 class StatefulAgent(Agent):
 
-    def __init__(self, model, optimizer, cutoff, gpu=-1):
+    def __init__(self, model, optimizer, cutoff):
 
-        super(StatefulAgent, self).__init__(model, optimizer, gpu)
+        super(StatefulAgent, self).__init__(model, optimizer)
 
         self.cutoff = cutoff
         self.counter = 0
 
-        self.loss = Variable(self.xp.zeros((), 'float32'))
+        self.loss = None
 
     def train(self, data):
         """
@@ -87,8 +75,12 @@ class StatefulAgent(Agent):
 
         self.counter += 1
 
-        _loss = self.model(map(lambda x: Variable(self.xp.asarray(x)), data))
-        self.loss += _loss
+        _loss = self.model(data)
+
+        if self.loss is None:
+            self.loss = _loss
+        else:
+            self.loss += _loss
 
         if self.counter % self.cutoff == 0:
 
@@ -97,7 +89,7 @@ class StatefulAgent(Agent):
             self.loss.unchain_backward()
             self.optimizer.update()
 
-            self.loss = Variable(self.xp.zeros((), 'float32'))
+            self.loss = None
 
         return _loss.data
 

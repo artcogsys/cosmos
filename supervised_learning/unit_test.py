@@ -2,6 +2,8 @@ import unittest
 
 from chainer.datasets import TupleDataset
 
+import numpy as np
+
 import networks
 from agents import *
 from models import *
@@ -28,7 +30,7 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(Classifier(net), chainer.optimizers.Adam(), gpu=-1)
+        agent = StatelessAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam())
 
         # define world
         world = World(agent)
@@ -58,7 +60,7 @@ class UnitTest(unittest.TestCase):
         net = networks.RNN(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatefulAgent(Classifier(net), chainer.optimizers.Adam(), cutoff=train_iter.n_batches, gpu=-1)
+        agent = StatefulAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam(), cutoff=train_iter.n_batches)
 
         # define world
         world = World(agent)
@@ -87,7 +89,7 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(Classifier(net), chainer.optimizers.Adam(), gpu=0)
+        agent = StatelessAgent(Classifier(net, gpu=0), chainer.optimizers.Adam())
 
         # define world
         world = World(agent)
