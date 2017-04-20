@@ -1,3 +1,4 @@
+from chainer import cuda
 
 class Agent(object):
 
@@ -29,7 +30,7 @@ class Agent(object):
 
         loss = self.model(data)
 
-        return loss.data
+        return cuda.to_cpu(loss.data)
 
     def reset(self):
         """
@@ -53,7 +54,7 @@ class StatelessAgent(Agent):
         loss.backward()
         self.optimizer.update()
 
-        return loss.data
+        return cuda.to_cpu(loss.data)
 
 class StatefulAgent(Agent):
 
@@ -91,7 +92,7 @@ class StatefulAgent(Agent):
 
             self.loss = None
 
-        return _loss.data
+        return cuda.to_cpu(_loss.data)
 
     def reset(self):
         self.model.reset()
