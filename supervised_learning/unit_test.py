@@ -10,7 +10,7 @@ from iterators import RandomIterator, SequentialIterator
 
 class UnitTest(unittest.TestCase):
 
-    def atest_stateless_network(self):
+    def test_stateless_network(self):
 
         n_epochs = 20
 
@@ -39,7 +39,7 @@ class UnitTest(unittest.TestCase):
         print test_loss
 
 
-    def atest_stateful_network(self):
+    def test_stateful_network(self):
 
         n_epochs = 20
 
