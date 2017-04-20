@@ -1,8 +1,8 @@
 import numpy as np
 
 import chainer
+import cupy
 from chainer import Variable
-from chainer import cuda
 
 class Agent(object):
 
@@ -14,7 +14,7 @@ class Agent(object):
         self.optimizer.setup(self.model)
 
         if gpu>=0:
-            self.xp = cuda.cupy
+            self.xp = cupy
             chainer.cuda.get_device(gpu).use()
             self.model.to_gpu()
         else:
