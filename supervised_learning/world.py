@@ -50,7 +50,7 @@ class World(object):
         validate = not test_iter is None
         if validate:
             min_loss = np.inf*np.ones(self.n_agents)
-            test_loss = np.zeros([n_epochs, self.n_agents])/0
+            test_loss = np.full([n_epochs, self.n_agents], np.nan)
             _optimal_model = [None for i in range(self.n_agents)]
 
         for epoch in tqdm.tqdm(xrange(n_epochs)):
