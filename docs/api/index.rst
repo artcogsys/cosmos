@@ -1,0 +1,23 @@
+.. cosmos documentation master file, created by
+   sphinx-quickstart on Sat Apr 22 11:04:30 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to cosmos's documentation!
+==================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 4
+
+   cosmos
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

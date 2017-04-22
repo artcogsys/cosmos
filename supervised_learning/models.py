@@ -9,6 +9,9 @@ from chainer import cuda
 ## Base class
 
 class Model(Chain):
+    """
+    Model which wraps a network to compute loss and generate actual predictions
+    """
 
     def __init__(self, net, loss_function, output_function=lambda x:x, gpu=-1):
         super(Model, self).__init__(predictor=net)
@@ -23,9 +26,12 @@ class Model(Chain):
     def __call__(self, data):
         """ Compute loss for minibatch of data
 
-        :param data: list of minibatches (e.g. inputs and targets for supervised learning)
-        :param train: call predictor in train or test mode
-        :return: loss
+        Args:
+            data: list of minibatches (e.g. inputs and targets for supervised learning)
+            train: call predictor in train or test mode
+        
+        Returns:
+            loss
         """
 
         data = map(lambda x: Variable(self.xp.asarray(x)), data)
@@ -42,9 +48,11 @@ class Model(Chain):
         """
         Returns prediction, which can be different than raw output (e.g. for softmax function)
 
-        :param data: minibatch or list of minibatches representing input to the model
-        :param train: call predictor in train or test mode
-        :return: prediction
+        Args:
+            data: minibatch or list of minibatches representing input to the model
+        
+        Returns:
+            prediction
         """
 
         data = map(lambda x: Variable(self.xp.asarray(x)), data)
@@ -58,6 +66,9 @@ class Model(Chain):
 ## Classifier object
 
 class Classifier(Model):
+    """
+    Wrapper for classification problems
+    """
 
     def __init__(self, net, gpu=-1):
         super(Classifier, self).__init__(net, gpu=gpu, loss_function=F.softmax_cross_entropy,
@@ -67,6 +78,9 @@ class Classifier(Model):
 ## Regressor object
 
 class Regressor(Model):
+    """
+    Wrapper for regression problems
+    """
 
     def __init__(self, net, gpu=-1):
         super(Regressor, self).__init__(net, gpu=gpu, loss_function=F.mean_squared_error)

@@ -5,7 +5,7 @@ from chainer.datasets import TupleDataset
 import numpy as np
 
 import networks
-from agents import *
+from agents import SupervisedAgent
 from models import *
 from world import World
 from iterators import RandomIterator, SequentialIterator
@@ -13,6 +13,9 @@ from iterators import RandomIterator, SequentialIterator
 class UnitTest(unittest.TestCase):
 
     def test_stateless_network(self):
+        """
+        Test training procedure for stateless network
+        """
 
         n_epochs = 20
 
@@ -30,7 +33,7 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam())
+        agent = SupervisedAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam())
 
         # define world
         world = World(agent)
@@ -40,6 +43,9 @@ class UnitTest(unittest.TestCase):
 
 
     def test_stateful_network(self):
+        """
+        Test training procedure for stateful network
+        """
 
         n_epochs = 20
 
@@ -58,7 +64,7 @@ class UnitTest(unittest.TestCase):
         net = networks.RNN(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatefulAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam(), cutoff=train_iter.n_batches)
+        agent = SupervisedAgent(Classifier(net, gpu=-1), chainer.optimizers.Adam(), cutoff=train_iter.n_batches)
 
         # define world
         world = World(agent)
@@ -68,6 +74,9 @@ class UnitTest(unittest.TestCase):
 
 
     def test_gpu(self):
+        """
+        Test training procedure for stateless network on GPU
+        """
 
         n_epochs = 20
 
@@ -85,7 +94,7 @@ class UnitTest(unittest.TestCase):
         net = networks.MLP(n_output=2, n_hidden=3)
 
         # define agent
-        agent = StatelessAgent(Classifier(net, gpu=0), chainer.optimizers.Adam())
+        agent = SupervisedAgent(Classifier(net, gpu=0), chainer.optimizers.Adam())
 
         # define world
         world = World(agent)

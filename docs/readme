@@ -1,0 +1,20 @@
+# instructions for document generation:
+mkdir docs
+cd docs
+sphinx-quickstart => say yes on autodoc, mathpng and mathjax
+sphinx-apidoc -FP ~/Code/github/cosmos -o api   # previously sphinx-apidoc -fMeET ~/Code/github/DRM -o api
+# add in conf.py:
+sys.path.insert(0, os.path.abspath('../..')) # don't forget this one even if it does not contain code
+sys.path.insert(0, os.path.abspath('../analysis'))
+sys.path.insert(0, os.path.abspath('../reinforcement_learning'))
+sys.path.insert(0, os.path.abspath('../supervised_learning'))
+# add in conf.py:
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.napoleon',
+]
+# napoleon ensures support for google style docstrings (which is the convention we will use)
+# modify index.rst: add :glob: and then add api/*
+make html
+make latexpdf

@@ -1,10 +1,12 @@
 import numpy as np
 
 class RandomIterator(object):
+    """
+    Generates random subsets of data 
+    """
 
     def __init__(self, data, batch_size=None):
-        """
-        
+        """        
         :param data: 
         :param batch_size:
         :return list of batches
@@ -38,8 +40,17 @@ class RandomIterator(object):
 
 
 class SequentialIterator(object):
+    """
+    Generates subsets of data such that each batch contains data for the next time point
+    """
 
     def __init__(self, data, batch_size=None):
+        """
+        
+        Args:
+            data: 
+            batch_size: 
+        """
 
         self.data = data
 
