@@ -48,105 +48,115 @@
 <div class="section" id="module-cosmos.reinforcement_learning.agents">
 <span id="cosmos-reinforcement-learning-agents-module"></span><h2>cosmos.reinforcement_learning.agents module<a class="headerlink" href="#module-cosmos.reinforcement_learning.agents" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="cosmos.reinforcement_learning.agents.ActorCriticAgent">
-<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.agents.</code><code class="descname">ActorCriticAgent</code><span class="sig-paren">(</span><em>net</em>, <em>optimizer</em>, <em>gpu=-1</em>, <em>cutoff=None</em>, <em>gamma=0.99</em>, <em>beta=0.01</em>, <em>aac=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.ActorCriticAgent" title="Permalink to this definition">¶</a></dt>
+<dt id="cosmos.reinforcement_learning.agents.REINFORCEAgent">
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.agents.</code><code class="descname">REINFORCEAgent</code><span class="sig-paren">(</span><em>model</em>, <em>optimizer=None</em>, <em>gamma=0.99</em>, <em>cutoff=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.REINFORCEAgent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Implements advantage actor critic and REINFORCE (which does not use a value baseline)</p>
-<p>Note that REINFORCE is a policy gradient method which does not use a critic.
-Instead the return is computed as a running estimate</p>
+<p>Implements REINFORCE algorithm</p>
 <p><a class="reference external" href="https://webdocs.cs.ualberta.ca/%7Esutton/book/bookdraft2016sep.pdf">https://webdocs.cs.ualberta.ca/%7Esutton/book/bookdraft2016sep.pdf</a>
 <a class="reference external" href="https://github.com/dennybritz/reinforcement-learning/tree/master/PolicyGradient">https://github.com/dennybritz/reinforcement-learning/tree/master/PolicyGradient</a>
 <a class="reference external" href="http://blog.shakirm.com/2015/11/machine-learning-trick-of-the-day-5-log-derivative-trick/">http://blog.shakirm.com/2015/11/machine-learning-trick-of-the-day-5-log-derivative-trick/</a>
 <a class="reference external" href="http://www.1-4-5.net/~dmm/ml/log_derivative_trick.pdf">http://www.1-4-5.net/~dmm/ml/log_derivative_trick.pdf</a></p>
 <dl class="method">
-<dt id="cosmos.reinforcement_learning.agents.ActorCriticAgent.entropy">
-<code class="descname">entropy</code><span class="sig-paren">(</span><em>pi</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.ActorCriticAgent.entropy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.agents.ActorCriticAgent.run">
-<code class="descname">run</code><span class="sig-paren">(</span><em>data</em>, <em>train=True</em>, <em>idx=None</em>, <em>final=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.ActorCriticAgent.run" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; a new observation and the reward associated with the previous observation and action</li>
-<li><strong>train</strong> &#8211; </li>
-<li><strong>idx</strong> &#8211; </li>
-<li><strong>final</strong> &#8211; </li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
-</td>
-</tr>
-</tbody>
-</table>
+<dt id="cosmos.reinforcement_learning.agents.REINFORCEAgent.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.REINFORCEAgent.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets persistent states</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="cosmos.reinforcement_learning.agents.ActorCriticAgent.score_function">
-<code class="descname">score_function</code><span class="sig-paren">(</span><em>action</em>, <em>pi</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.ActorCriticAgent.score_function" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-cosmos.reinforcement_learning.iterators">
-<span id="cosmos-reinforcement-learning-iterators-module"></span><h2>cosmos.reinforcement_learning.iterators module<a class="headerlink" href="#module-cosmos.reinforcement_learning.iterators" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="cosmos.reinforcement_learning.iterators.FooTask">
-<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.iterators.</code><code class="descname">FooTask</code><span class="sig-paren">(</span><em>n=2</em>, <em>p=0.8</em>, <em>batch_size=1</em>, <em>n_batches=inf</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.iterators.FooTask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Very simple environment for testing fully observed models. The actor gets a reward when it correctly decides
-on the ground truth. Ground truth 0/1 determines probabilistically the number of 0s or 1s as observations</p>
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.iterators.FooTask.get_observation">
-<code class="descname">get_observation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.iterators.FooTask.get_observation" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">observation given the state</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.iterators.FooTask.get_state">
-<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.iterators.FooTask.get_state" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">new state</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.iterators.FooTask.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.iterators.FooTask.next" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.iterators.FooTask.process">
-<code class="descname">process</code><span class="sig-paren">(</span><em>agent</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.iterators.FooTask.process" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process agent action, compute reward and generate new state and observation</p>
+<dt id="cosmos.reinforcement_learning.agents.REINFORCEAgent.score_function">
+<code class="descname">score_function</code><span class="sig-paren">(</span><em>action</em>, <em>policy</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.REINFORCEAgent.score_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes score</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>agent</strong> &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> (<em>int</em>) &#8211; </li>
+<li><strong>policy</strong> &#8211; </li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">score</p>
+</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.agents.REINFORCEAgent.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>observation</em>, <em>reward</em>, <em>done</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.agents.REINFORCEAgent.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains agent on cumulate reward (return)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">action (Variable)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cosmos.reinforcement_learning.models">
+<span id="cosmos-reinforcement-learning-models-module"></span><h2>cosmos.reinforcement_learning.models module<a class="headerlink" href="#module-cosmos.reinforcement_learning.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cosmos.reinforcement_learning.models.ActorModel">
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.models.</code><code class="descname">ActorModel</code><span class="sig-paren">(</span><em>net</em>, <em>gpu=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.ActorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cosmos.reinforcement_learning.models.Model" title="cosmos.reinforcement_learning.models.Model"><code class="xref py py-class docutils literal"><span class="pre">cosmos.reinforcement_learning.models.Model</span></code></a></p>
+<p>An actor model computes the action and policy from a predictor</p>
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.models.ActorModel.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.ActorModel.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; observation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">action and policy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.models.ActorModel.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.ActorModel.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cosmos.reinforcement_learning.models.Model">
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.models.</code><code class="descname">Model</code><span class="sig-paren">(</span><em>net</em>, <em>gpu=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
+<p>Model which wraps a network to generate predictions and compute policies</p>
+<dl class="attribute">
+<dt id="cosmos.reinforcement_learning.models.Model.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.reinforcement_learning.models.Model.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.models.Model.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.Model.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.models.Model.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.models.Model.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -157,10 +167,20 @@ on the ground truth. Ground truth 0/1 determines probabilistically the number of
 <dt id="cosmos.reinforcement_learning.networks.MLP">
 <em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.networks.</code><code class="descname">MLP</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.networks.MLP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
-<dl class="method">
-<dt id="cosmos.reinforcement_learning.networks.MLP.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.networks.MLP.reset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<p>Multilayer perceptron</p>
+<dl class="attribute">
+<dt id="cosmos.reinforcement_learning.networks.MLP.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.reinforcement_learning.networks.MLP.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -168,32 +188,139 @@ on the ground truth. Ground truth 0/1 determines probabilistically the number of
 <dt id="cosmos.reinforcement_learning.networks.RNN">
 <em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.networks.</code><code class="descname">RNN</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.networks.RNN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
+<dl class="attribute">
+<dt id="cosmos.reinforcement_learning.networks.RNN.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.reinforcement_learning.networks.RNN.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
-<dt id="cosmos.reinforcement_learning.networks.RNN.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.networks.RNN.reset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="cosmos.reinforcement_learning.networks.RNN.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.networks.RNN.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets persistent states</p>
+</dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="cosmos-reinforcement-learning-unit-test-module">
-<h2>cosmos.reinforcement_learning.unit_test module<a class="headerlink" href="#cosmos-reinforcement-learning-unit-test-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cosmos.reinforcement_learning.tasks">
+<span id="cosmos-reinforcement-learning-tasks-module"></span><h2>cosmos.reinforcement_learning.tasks module<a class="headerlink" href="#module-cosmos.reinforcement_learning.tasks" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cosmos.reinforcement_learning.tasks.EvidenceTask">
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.tasks.</code><code class="descname">EvidenceTask</code><span class="sig-paren">(</span><em>n=2</em>, <em>p=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.tasks.EvidenceTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Very simple task which only requires evaluating present evidence and does not require evidence integration.
+The actor gets a reward when it correctly decides on the ground truth. Ground truth 0/1 determines probabilistically
+the number of 0s or 1s as observations</p>
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.tasks.EvidenceTask.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.tasks.EvidenceTask.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets state and generates new observations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">observations, reward, done</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.tasks.EvidenceTask.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.tasks.EvidenceTask.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>This task always produces a new state and observation after each decision</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> &#8211; agent(s) action</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cosmos.reinforcement_learning.unit_test">
+<span id="cosmos-reinforcement-learning-unit-test-module"></span><h2>cosmos.reinforcement_learning.unit_test module<a class="headerlink" href="#module-cosmos.reinforcement_learning.unit_test" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cosmos.reinforcement_learning.unit_test.UnitTest">
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.unit_test.</code><code class="descname">UnitTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.unit_test.UnitTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.unit_test.UnitTest.test_stateful_network">
+<code class="descname">test_stateful_network</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.unit_test.UnitTest.test_stateful_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test training procedure for stateful network</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cosmos.reinforcement_learning.unit_test.UnitTest.test_stateless_network">
+<code class="descname">test_stateless_network</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.unit_test.UnitTest.test_stateless_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test training procedure for stateless network</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-cosmos.reinforcement_learning.world">
 <span id="cosmos-reinforcement-learning-world-module"></span><h2>cosmos.reinforcement_learning.world module<a class="headerlink" href="#module-cosmos.reinforcement_learning.world" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cosmos.reinforcement_learning.world.World">
-<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.world.</code><code class="descname">World</code><span class="sig-paren">(</span><em>agents</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cosmos.reinforcement_learning.world.</code><code class="descname">World</code><span class="sig-paren">(</span><em>agents</em>, <em>out='result'</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Wrapper object which takes care of training and testing on some data iterator for one or more agents</p>
 <dl class="method">
 <dt id="cosmos.reinforcement_learning.world.World.test">
-<code class="descname">test</code><span class="sig-paren">(</span><em>test_iter</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World.test" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">test</code><span class="sig-paren">(</span><em>task</em>, <em>n_steps</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World.test" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>task</strong> &#8211; task to run agent(s) on</li>
+<li><strong>n_steps</strong> (<em>int</em>) &#8211; number of steps to train on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">test loss and reward</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cosmos.reinforcement_learning.world.World.train">
-<code class="descname">train</code><span class="sig-paren">(</span><em>train_iter</em>, <em>n_epochs</em>, <em>test_iter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World.train" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">train</code><span class="sig-paren">(</span><em>task</em>, <em>n_steps</em>, <em>snapshot=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.reinforcement_learning.world.World.train" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>task</strong> &#8211; task to run agent(s) on</li>
+<li><strong>n_steps</strong> (<em>int</em>) &#8211; number of steps to train on</li>
+<li><strong>snapshot</strong> (<em>int</em>) &#8211; whether or not to save model after each epochs modulo snapshot</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">rewards</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
@@ -214,9 +341,10 @@ on the ground truth. Ground truth 0/1 determines probabilistically the number of
 <li><a class="reference internal" href="#">cosmos.reinforcement_learning package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-cosmos.reinforcement_learning.agents">cosmos.reinforcement_learning.agents module</a></li>
-<li><a class="reference internal" href="#module-cosmos.reinforcement_learning.iterators">cosmos.reinforcement_learning.iterators module</a></li>
+<li><a class="reference internal" href="#module-cosmos.reinforcement_learning.models">cosmos.reinforcement_learning.models module</a></li>
 <li><a class="reference internal" href="#module-cosmos.reinforcement_learning.networks">cosmos.reinforcement_learning.networks module</a></li>
-<li><a class="reference internal" href="#cosmos-reinforcement-learning-unit-test-module">cosmos.reinforcement_learning.unit_test module</a></li>
+<li><a class="reference internal" href="#module-cosmos.reinforcement_learning.tasks">cosmos.reinforcement_learning.tasks module</a></li>
+<li><a class="reference internal" href="#module-cosmos.reinforcement_learning.unit_test">cosmos.reinforcement_learning.unit_test module</a></li>
 <li><a class="reference internal" href="#module-cosmos.reinforcement_learning.world">cosmos.reinforcement_learning.world module</a></li>
 <li><a class="reference internal" href="#module-cosmos.reinforcement_learning">Module contents</a></li>
 </ul>
@@ -226,7 +354,7 @@ on the ground truth. Ground truth 0/1 determines probabilistically the number of
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">cosmos</a><ul>
+  <li><a href="index.html">Welcome to cosmos&#8217;s documentation!</a><ul>
   <li><a href="cosmos.html">cosmos package</a><ul>
       <li>Previous: <a href="cosmos.analysis.html" title="previous chapter">cosmos.analysis package</a></li>
       <li>Next: <a href="cosmos.supervised_learning.html" title="next chapter">cosmos.supervised_learning package</a></li>

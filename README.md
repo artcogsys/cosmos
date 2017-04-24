@@ -4,6 +4,10 @@ Cognitive Modeling Suite
 This is the starting point for the modeling work we will do within LII and beyond. Ideally,we have one framework in which we can build artificial brains that can be conditioned on data or used as the brains of RL agents. 
 
 
+- supervised: only one agent; remove support for online monitoring of multiple agents
+- reinforce on one or more agents acting on the same environment
+
+
 
 SETUP:
 

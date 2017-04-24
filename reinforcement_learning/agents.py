@@ -1,24 +1,21 @@
+
 import numpy as np
 
-import chainer.functions as F
+from collections import defaultdict
+
 from chainer import Variable
-
-#### UNFINISHED!!! HOE WERKT HET MET STATELESS AGENTS??
-
-
+import chainer.functions as F
+from chainer import cuda
 
 
 #####
-## Actor-critic agent
+## Basic REINFORCE agent
 #
 
-class ActorCriticAgent(object):
+class REINFORCEAgent(object):
     """
 
-    Implements advantage actor critic and REINFORCE (which does not use a value baseline)
-
-    Note that REINFORCE is a policy gradient method which does not use a critic.
-    Instead the return is computed as a running estimate
+    Implements REINFORCE algorithm
 
     https://webdocs.cs.ualberta.ca/%7Esutton/book/bookdraft2016sep.pdf
     https://github.com/dennybritz/reinforcement-learning/tree/master/PolicyGradient
@@ -26,151 +23,97 @@ class ActorCriticAgent(object):
     http://www.1-4-5.net/~dmm/ml/log_derivative_trick.pdf
     """
 
-    def __init__(self, net, optimizer, gpu=-1, cutoff=None, gamma=0.99, beta=1e-2, aac=True):
+    def __init__(self, model, optimizer=None, gamma=0.99, cutoff=None):
         """
 
-        :param model:
-        :param optimizer:
-        :param gpu:
-        :param cutoff:
-        :param gamma:
-        :param beta:
-        :param aac: Advantage actor-critic (True) or REINFORCE (false)
+        Args:
+            model:
+            optimizer:
+            cutoff (int):
+            gamma (0.99): Discounting factor
         """
 
-        self.net = net
+        self.model = model
 
         self.optimizer = optimizer
-        self.optimizer.setup(self.net)
-
-
-
-
-
-        # cutoff for truncated BPTT
-        self.cutoff = cutoff
+        self.optimizer.setup(self.model)
 
         # discounting factor
         self.gamma = gamma
 
-        # contribution of entropy term
-        self.beta = beta
+        self.cutoff = cutoff
 
-        # monitor score, entropy and reward
-        self.buffer = Monitor()
+        # monitor score and reward
+        self.rewards = []
+        self.scores = []
+
+        # number of steps taken
+        self.counter = 0
 
         # keep track of cumulative reward
         self.cum_reward = 0
 
-        # AAC mode
-        self.aac = aac
-
-        super(ActorCriticAgent, self).__init__(model, optimizer=optimizer, gpu=gpu)
-
-    def run(self, data, train=True, idx=None, final=False):
+    def train(self, observation, reward, done):
+        """
+        Trains agent on cumulate reward (return)
+        
+        Returns:
+            action (Variable)
         """
 
-        :param data: a new observation and the reward associated with the previous observation and action
-        :param train:
-        :param idx:
-        :param final:
-        :return:
-        """
-
-        # This code only optimally processes single runs of a task
-        # Reason is that we cannot process easily in parallel when using terminal states
-        # This requires resetting of internal states per batch index
-        # Note that we might gain a speed-up by completely ignoring terminal states and
-        # have the agent use its observation to identify whether it started a new trial
-        # problem is that this does not allow convergence in e.g. probabilistic categorization task
-        # On the other hand, in lifelong learning settings we never have terminal states. This requires more thought
-        # assert(data.batch_size==1)
+        self.counter += 1
 
         # get reward associated with taking the previous action in the previous state
-        reward = data[-2]
         if not reward is None:
-            self.buffer.set('reward', reward)
-            self.cum_reward += reward
+            self.rewards.append(reward)
 
-        # get terminal state
-        terminal = data[-1]
+        # reset state since we started a new episode
+        if done:
+            self.reset_state()
 
-        # store cumulative reward
-        if self.monitor:
-            map(lambda x: x.set('cumulative reward', np.mean(self.cum_reward)), self.monitor)
+        # compute policy and take new action based on observation, reward and terminal state
+        action, policy = self.model(observation)
 
-        if len(terminal)==1 and terminal:
-            self.reset()
-
-        # compute policy and take new action based on observations
-        self.action, policy, value = self.model(map(lambda x: Variable(self.xp.asarray(x)), data), train=train)
-
-        # backpropagate if we reach the cutoff for truncated backprop or if we processed the last batch
-        if train and idx > 0 and ((self.cutoff and (idx % self.cutoff) == 0) or final or (len(terminal)==1 and terminal)):
+        # backpropagate
+        if self.counter > 1 and (not self.model.has_state or self.counter % self.cutoff == 0 or done):
 
             # return value associated with last state
-            if (len(terminal)==1 and terminal) or not self.aac:
-                R = 0
-            else:
-                R = value
+            R=0
 
-            pi_loss = v_loss = 0
-            for i in range(len(self.buffer.dict['reward'])-1,-1,-1):
+            loss = 0
+            for i in range(len(self.rewards)-1,-1,-1):
 
-                R = self.buffer.dict['reward'].pop() + self.gamma * R
+                R = self.rewards.pop() + self.gamma * R
 
-                if self.aac:
-                    advantage = R - self.buffer.dict['value'].pop()
-                    _ss = F.squeeze(self.buffer.dict['score'].pop(),axis=1) * advantage.data
-                else:
-                    _ss = F.squeeze(self.buffer.dict['score'].pop(),axis=1) * R
+                _ss = F.squeeze(self.scores.pop(),axis=1) * R
 
                 if _ss.size > 1:
                     _ss = F.sum(_ss, axis=0)
-                pi_loss -= F.squeeze(_ss)
-
-                pi_loss -= self.beta * self.buffer.dict['entropy'].pop()
-
-                if self.aac:
-                    v_loss += F.sum(advantage ** 2)
-
-            # Compute total loss; 0.5 supposedly used by Mnih et al
-            if self.aac:
-                v_loss = F.reshape(v_loss, pi_loss.data.shape)
-                loss = pi_loss + 0.5 * v_loss
-            else:
-                loss = pi_loss
-
-            _loss = loss.data
+                loss -= F.squeeze(_ss)
 
             self.optimizer.zero_grads()
             loss.backward()
             loss.unchain_backward()
             self.optimizer.update()
 
-            # store return
-            if self.monitor:
-                map(lambda x: x.set('return', np.mean(R.data)), self.monitor)
-
-        else:
-
-            _loss = 0
-
         # recompute score function: grad_theta log pi_theta (s_t, a_t) * v_t
-        self.buffer.set('score', self.score_function(self.action, policy))
+        self.scores.append(self.score_function(action, policy))
 
-        # compute entropy
-        self.buffer.set('entropy', F.sum(self.entropy(policy)))
+        return cuda.to_cpu(action)
 
-        # add value
-        if self.aac:
-            self.buffer.set('value', value)
+    def score_function(self, action, policy):
+        """
+        Computes score
+        
+        Args:
+            action (int): 
+            policy:
 
-        return _loss
+        Returns:
+            score
+        """
 
-    def score_function(self, action, pi):
-
-        logp = F.log_softmax(pi)
+        logp = F.log_softmax(policy)
 
         score = F.select_item(logp, Variable(action))
 
@@ -180,9 +123,28 @@ class ActorCriticAgent(object):
 
         return score
 
-    def entropy(self, pi):
+    def test(self, observation, reward, done):
+        """
+        Tests agent
 
-        p = F.softmax(pi)
-        logp = F.log_softmax(pi)
+        Returns:
+            action (Variable)
+        """
 
-        return - F.sum(p * logp, axis=1)
+        # reset state since we started a new episode
+        if done:
+            self.reset_state()
+
+        # take new action based on observation, reward and terminal state
+        action, _ = self.model(observation)
+
+        return cuda.to_cpu(action)
+
+    def reset_state(self):
+        """
+        Resets persistent states
+        """
+
+        if self.model.has_state:
+            self.model.reset_state()
+            self.counter = 0

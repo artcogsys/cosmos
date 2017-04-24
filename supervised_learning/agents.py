@@ -21,9 +21,13 @@ class SupervisedAgent(object):
         self.optimizer.setup(self.model)
 
         # used for stateful networks only
-        self.cutoff = cutoff
-        self.counter = 0
-        self.loss = None
+        if self.model.has_state:
+
+            assert(not cutoff is None)
+
+            self.cutoff = cutoff
+            self.counter = 0
+            self.loss = None
 
     def __call__(self, data):
         """
@@ -45,7 +49,7 @@ class SupervisedAgent(object):
         :return: loss
         """
 
-        if self.model.predictor.has_state():
+        if self.model.predictor.has_state:
 
             self.counter += 1
 
@@ -95,5 +99,6 @@ class SupervisedAgent(object):
         Resets persistent states
         """
 
-        self.model.reset_state()
-        self.counter = 0
+        if self.model.has_state:
+            self.model.reset_state()
+            self.counter = 0

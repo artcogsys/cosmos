@@ -13,6 +13,7 @@ class MLP(Chain):
     def __call__(self, x):
         return self.l2(F.relu(self.l1(x)))
 
+    @property
     def has_state(self):
         """
         Checks if a network has persistent states
@@ -23,13 +24,6 @@ class MLP(Chain):
 
         return False
 
-    def reset_state(self):
-        """
-        Resets persistent states
-        
-        """
-
-        pass
 
 class RNN(Chain):
 
@@ -39,6 +33,7 @@ class RNN(Chain):
     def __call__(self, x):
         return self.fc(self.lstm(x))
 
+    @property
     def has_state(self):
         """
         Checks if a network has persistent states

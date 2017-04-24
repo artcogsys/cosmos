@@ -149,14 +149,23 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; list of minibatches (e.g. inputs and targets for supervised learning)</li>
-<li><strong>train</strong> &#8211; call predictor in train or test mode</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; list of minibatches (e.g. inputs and targets for supervised learning)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">loss</p>
-</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">loss</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cosmos.supervised_learning.models.Model.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.supervised_learning.models.Model.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -200,9 +209,9 @@
 <em class="property">class </em><code class="descclassname">cosmos.supervised_learning.networks.</code><code class="descname">MLP</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.supervised_learning.networks.MLP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
 <p>Multilayer perceptron</p>
-<dl class="method">
+<dl class="attribute">
 <dt id="cosmos.supervised_learning.networks.MLP.has_state">
-<code class="descname">has_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.supervised_learning.networks.MLP.has_state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.supervised_learning.networks.MLP.has_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a network has persistent states</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -214,21 +223,15 @@
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="cosmos.supervised_learning.networks.MLP.reset_state">
-<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.supervised_learning.networks.MLP.reset_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resets persistent states</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
 <dt id="cosmos.supervised_learning.networks.RNN">
 <em class="property">class </em><code class="descclassname">cosmos.supervised_learning.networks.</code><code class="descname">RNN</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.supervised_learning.networks.RNN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
-<dl class="method">
+<dl class="attribute">
 <dt id="cosmos.supervised_learning.networks.RNN.has_state">
-<code class="descname">has_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cosmos.supervised_learning.networks.RNN.has_state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_state</code><a class="headerlink" href="#cosmos.supervised_learning.networks.RNN.has_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a network has persistent states</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -352,7 +355,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">cosmos</a><ul>
+  <li><a href="index.html">Welcome to cosmos&#8217;s documentation!</a><ul>
   <li><a href="cosmos.html">cosmos package</a><ul>
       <li>Previous: <a href="cosmos.reinforcement_learning.html" title="previous chapter">cosmos.reinforcement_learning package</a></li>
   </ul></li>

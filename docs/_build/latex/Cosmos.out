@@ -6,25 +6,24 @@
 \BOOKMARK [0][-]{chapter.3}{cosmos.reinforcement\137learning package}{}% 6
 \BOOKMARK [1][-]{section.3.1}{Submodules}{chapter.3}% 7
 \BOOKMARK [1][-]{section.3.2}{cosmos.reinforcement\137learning.agents module}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.3}{cosmos.reinforcement\137learning.iterators module}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{cosmos.reinforcement\137learning.models module}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.4}{cosmos.reinforcement\137learning.networks module}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.5}{cosmos.reinforcement\137learning.unit\137test module}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.6}{cosmos.reinforcement\137learning.world module}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.7}{Module contents}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{cosmos.supervised\137learning package}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Submodules}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{cosmos.supervised\137learning.agents module}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.3}{cosmos.supervised\137learning.iterators module}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.4}{cosmos.supervised\137learning.models module}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.5}{cosmos.supervised\137learning.networks module}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.6}{cosmos.supervised\137learning.unit\137test module}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.7}{cosmos.supervised\137learning.world module}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.8}{Module contents}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Welcome to cosmos's documentation!}{}% 23
-\BOOKMARK [1][-]{section.5.1}{cosmos package}{chapter.5}% 24
-\BOOKMARK [0][-]{chapter.6}{Indices and tables}{}% 25
-\BOOKMARK [0][-]{chapter.7}{cosmos}{}% 26
-\BOOKMARK [1][-]{section.7.1}{cosmos package}{chapter.7}% 27
-\BOOKMARK [0][-]{chapter.8}{Indices and tables}{}% 28
-\BOOKMARK [0][-]{section*.287}{Python Module Index}{}% 29
-\BOOKMARK [0][-]{section*.288}{Index}{}% 30
+\BOOKMARK [1][-]{section.3.5}{cosmos.reinforcement\137learning.tasks module}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.6}{cosmos.reinforcement\137learning.unit\137test module}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.7}{cosmos.reinforcement\137learning.world module}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.8}{Module contents}{chapter.3}% 14
+\BOOKMARK [0][-]{chapter.4}{cosmos.supervised\137learning package}{}% 15
+\BOOKMARK [1][-]{section.4.1}{Submodules}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.2}{cosmos.supervised\137learning.agents module}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.3}{cosmos.supervised\137learning.iterators module}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.4}{cosmos.supervised\137learning.models module}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.5}{cosmos.supervised\137learning.networks module}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.6}{cosmos.supervised\137learning.unit\137test module}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.7}{cosmos.supervised\137learning.world module}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.8}{Module contents}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Welcome to cosmos's documentation!}{}% 24
+\BOOKMARK [1][-]{section.5.1}{cosmos package}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter.6}{Indices and tables}{}% 26
+\BOOKMARK [0][-]{chapter.7}{Indices and tables}{}% 27
+\BOOKMARK [0][-]{section*.199}{Python Module Index}{}% 28
+\BOOKMARK [0][-]{section*.200}{Index}{}% 29

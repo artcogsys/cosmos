@@ -28,7 +28,6 @@ class Model(Chain):
 
         Args:
             data: list of minibatches (e.g. inputs and targets for supervised learning)
-            train: call predictor in train or test mode
         
         Returns:
             loss
@@ -58,6 +57,17 @@ class Model(Chain):
         data = map(lambda x: Variable(self.xp.asarray(x)), data)
 
         return self.output_function(self.predictor(data)).data
+
+    @property
+    def has_state(self):
+        """
+        Checks if a network has persistent states
+        
+        Returns:
+          bool
+        """
+
+        return self.predictor.has_state
 
     def reset_state(self):
         self.predictor.reset_state()

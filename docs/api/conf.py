@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # cosmos documentation build configuration file, created by
-# sphinx-quickstart on Sat Apr 22 11:04:30 2017.
+# sphinx-quickstart on Mon Apr 24 23:58:03 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.

@@ -1,103 +1,105 @@
 \indexentry{cosmos.analysis (module)|hyperpage}{3}
 \indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{3}
-\indexentry{ActorCriticAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{3}
-\indexentry{entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{3}
-\indexentry{run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{3}
-\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{3}
-\indexentry{cosmos.reinforcement\_learning.iterators (module)|hyperpage}{4}
-\indexentry{FooTask (class in cosmos.reinforcement\_learning.iterators)|hyperpage}{4}
-\indexentry{get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{4}
-\indexentry{get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{4}
-\indexentry{next() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{4}
-\indexentry{process() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{4}
+\indexentry{REINFORCEAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{3}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{3}
+\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{3}
+\indexentry{train() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{3}
+\indexentry{cosmos.reinforcement\_learning.models (module)|hyperpage}{4}
+\indexentry{ActorModel (class in cosmos.reinforcement\_learning.models)|hyperpage}{4}
+\indexentry{\_\_call\_\_() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{4}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{4}
+\indexentry{Model (class in cosmos.reinforcement\_learning.models)|hyperpage}{4}
+\indexentry{has\_state (cosmos.reinforcement\_learning.models.Model attribute)|hyperpage}{4}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{4}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{4}
 \indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{4}
 \indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{4}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.MLP method)|hyperpage}{4}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.MLP attribute)|hyperpage}{4}
 \indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{4}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{4}
-\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{4}
-\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{4}
-\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{4}
-\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{4}
-\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{5}
-\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{5}
-\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{5}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{5}
-\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{5}
-\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{5}
-\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{5}
-\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{5}
-\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{5}
-\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{5}
-\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{5}
-\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{5}
-\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{5}
-\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{5}
-\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{5}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{6}
-\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{6}
-\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{6}
-\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{6}
-\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{6}
-\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{6}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{6}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{6}
-\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{6}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{6}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{6}
-\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{6}
-\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{6}
-\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{6}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.RNN attribute)|hyperpage}{4}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{4}
+\indexentry{cosmos.reinforcement\_learning.tasks (module)|hyperpage}{4}
+\indexentry{EvidenceTask (class in cosmos.reinforcement\_learning.tasks)|hyperpage}{4}
+\indexentry{reset() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{4}
+\indexentry{step() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{5}
+\indexentry{cosmos.reinforcement\_learning.unit\_test (module)|hyperpage}{5}
+\indexentry{UnitTest (class in cosmos.reinforcement\_learning.unit\_test)|hyperpage}{5}
+\indexentry{test\_stateful\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{5}
+\indexentry{test\_stateless\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{5}
+\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{5}
+\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{5}
+\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{5}
+\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{5}
+\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{6}
+\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{6}
+\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{6}
+\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{6}
+\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{6}
+\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{6}
+\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{6}
+\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{6}
+\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{6}
+\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{6}
+\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{6}
+\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{6}
+\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{6}
+\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{6}
+\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{6}
+\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{7}
+\indexentry{has\_state (cosmos.supervised\_learning.models.Model attribute)|hyperpage}{7}
+\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{7}
+\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{7}
+\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{7}
+\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{7}
+\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{7}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.MLP attribute)|hyperpage}{7}
+\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{7}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.RNN attribute)|hyperpage}{7}
+\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{7}
+\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{7}
+\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{7}
+\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{7}
 \indexentry{test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{7}
-\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{7}
-\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{7}
-\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{7}
-\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{7}
-\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{7}
-\indexentry{cosmos.supervised\_learning (module)|hyperpage}{7}
-\indexentry{cosmos (module)|hyperpage}{7}
+\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{8}
+\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{8}
+\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{8}
+\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{8}
+\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{8}
+\indexentry{cosmos.supervised\_learning (module)|hyperpage}{8}
+\indexentry{cosmos (module)|hyperpage}{8}
 \indexentry{cosmos.analysis (module)|hyperpage}{9}
 \indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{11}
-\indexentry{ActorCriticAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{11}
-\indexentry{entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{11}
-\indexentry{run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{11}
-\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{11}
-\indexentry{cosmos.reinforcement\_learning.iterators (module)|hyperpage}{11}
-\indexentry{FooTask (class in cosmos.reinforcement\_learning.iterators)|hyperpage}{11}
-\indexentry{get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{12}
-\indexentry{get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{12}
-\indexentry{next() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{12}
-\indexentry{process() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{12}
+\indexentry{REINFORCEAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{11}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{11}
+\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{11}
+\indexentry{train() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{11}
+\indexentry{cosmos.reinforcement\_learning.models (module)|hyperpage}{11}
+\indexentry{ActorModel (class in cosmos.reinforcement\_learning.models)|hyperpage}{11}
+\indexentry{\_\_call\_\_() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{11}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{12}
+\indexentry{Model (class in cosmos.reinforcement\_learning.models)|hyperpage}{12}
+\indexentry{has\_state (cosmos.reinforcement\_learning.models.Model attribute)|hyperpage}{12}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{12}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{12}
 \indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{12}
 \indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{12}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.MLP method)|hyperpage}{12}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.MLP attribute)|hyperpage}{12}
 \indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{12}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{12}
-\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{12}
-\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{12}
-\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{12}
-\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{12}
-\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{12}
-\indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{12}
-\indexentry{ActorCriticAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{12}
-\indexentry{entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{13}
-\indexentry{run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{13}
-\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{13}
-\indexentry{cosmos.reinforcement\_learning.iterators (module)|hyperpage}{13}
-\indexentry{FooTask (class in cosmos.reinforcement\_learning.iterators)|hyperpage}{13}
-\indexentry{get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{13}
-\indexentry{get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{13}
-\indexentry{next() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{13}
-\indexentry{process() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{13}
-\indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{13}
-\indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{13}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.MLP method)|hyperpage}{13}
-\indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{13}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{13}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.RNN attribute)|hyperpage}{12}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{12}
+\indexentry{cosmos.reinforcement\_learning.tasks (module)|hyperpage}{12}
+\indexentry{EvidenceTask (class in cosmos.reinforcement\_learning.tasks)|hyperpage}{12}
+\indexentry{reset() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{12}
+\indexentry{step() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{12}
+\indexentry{cosmos.reinforcement\_learning.unit\_test (module)|hyperpage}{13}
+\indexentry{UnitTest (class in cosmos.reinforcement\_learning.unit\_test)|hyperpage}{13}
+\indexentry{test\_stateful\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{13}
+\indexentry{test\_stateless\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{13}
 \indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{13}
 \indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{13}
 \indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{13}
 \indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{13}
+\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{13}
 \indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{15}
 \indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{15}
 \indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{15}
@@ -113,16 +115,16 @@
 \indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{16}
 \indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{16}
 \indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{16}
+\indexentry{has\_state (cosmos.supervised\_learning.models.Model attribute)|hyperpage}{16}
 \indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{16}
 \indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{16}
 \indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{16}
 \indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{16}
 \indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{16}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{16}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{16}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.MLP attribute)|hyperpage}{16}
 \indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{16}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{16}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{17}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.RNN attribute)|hyperpage}{16}
+\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{16}
 \indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{17}
 \indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{17}
 \indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{17}
@@ -133,153 +135,72 @@
 \indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{17}
 \indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{17}
 \indexentry{cosmos.supervised\_learning (module)|hyperpage}{17}
-\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{17}
-\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{17}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{17}
-\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{18}
-\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{18}
-\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{18}
-\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{18}
-\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{18}
-\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{18}
-\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{18}
-\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{18}
-\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{18}
-\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{18}
-\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{18}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{18}
-\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{18}
-\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{18}
-\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{18}
-\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{18}
-\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{18}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{19}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{19}
-\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{19}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{19}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{19}
-\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{19}
-\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{19}
-\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{19}
-\indexentry{test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{19}
-\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{19}
-\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{19}
-\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{19}
-\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{19}
-\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{19}
-\indexentry{cosmos.analysis (module)|hyperpage}{21}
-\indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{21}
-\indexentry{ActorCriticAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{21}
-\indexentry{entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{21}
-\indexentry{run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{21}
-\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{22}
-\indexentry{cosmos.reinforcement\_learning.iterators (module)|hyperpage}{22}
-\indexentry{FooTask (class in cosmos.reinforcement\_learning.iterators)|hyperpage}{22}
-\indexentry{get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{22}
-\indexentry{get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{22}
-\indexentry{next() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{22}
-\indexentry{process() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{22}
-\indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{22}
-\indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{22}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.MLP method)|hyperpage}{22}
-\indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{22}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{22}
-\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{22}
-\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{22}
-\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{22}
-\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{22}
-\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{23}
-\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{23}
-\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{23}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{23}
-\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{23}
-\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{23}
-\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{23}
-\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{23}
-\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{23}
-\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{23}
-\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{23}
-\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{23}
-\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{23}
-\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{23}
-\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{23}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{24}
-\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{24}
-\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{24}
-\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{24}
-\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{24}
-\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{24}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{24}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{24}
-\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{24}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{24}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{24}
-\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{24}
-\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{24}
-\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{24}
-\indexentry{test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{25}
-\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{25}
-\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{25}
-\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{25}
-\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{25}
-\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{25}
-\indexentry{cosmos.supervised\_learning (module)|hyperpage}{25}
-\indexentry{cosmos (module)|hyperpage}{25}
-\indexentry{cosmos.analysis (module)|hyperpage}{29}
-\indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{29}
-\indexentry{ActorCriticAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{29}
-\indexentry{entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{29}
-\indexentry{run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{29}
-\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method)|hyperpage}{30}
-\indexentry{cosmos.reinforcement\_learning.iterators (module)|hyperpage}{30}
-\indexentry{FooTask (class in cosmos.reinforcement\_learning.iterators)|hyperpage}{30}
-\indexentry{get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{30}
-\indexentry{get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{30}
-\indexentry{next() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{30}
-\indexentry{process() (cosmos.reinforcement\_learning.iterators.FooTask method)|hyperpage}{30}
-\indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{30}
-\indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{30}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.MLP method)|hyperpage}{30}
-\indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{30}
-\indexentry{reset() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{30}
-\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{30}
-\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{30}
-\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{30}
-\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{30}
-\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{31}
-\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{31}
-\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{31}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{31}
-\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{31}
-\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{31}
-\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{31}
-\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{31}
-\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{31}
-\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{31}
-\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{31}
-\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{31}
-\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{31}
-\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{31}
-\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{31}
-\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{32}
-\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{32}
-\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{32}
-\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{32}
-\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{32}
-\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{32}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{32}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.MLP method)|hyperpage}{32}
-\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{32}
-\indexentry{has\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{32}
-\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{32}
-\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{32}
-\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{32}
-\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{32}
-\indexentry{test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{33}
-\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{33}
-\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{33}
-\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{33}
-\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{33}
-\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{33}
-\indexentry{cosmos.supervised\_learning (module)|hyperpage}{33}
-\indexentry{cosmos (module)|hyperpage}{33}
+\indexentry{cosmos.analysis (module)|hyperpage}{19}
+\indexentry{cosmos.reinforcement\_learning.agents (module)|hyperpage}{19}
+\indexentry{REINFORCEAgent (class in cosmos.reinforcement\_learning.agents)|hyperpage}{19}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{19}
+\indexentry{score\_function() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{19}
+\indexentry{train() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method)|hyperpage}{19}
+\indexentry{cosmos.reinforcement\_learning.models (module)|hyperpage}{20}
+\indexentry{ActorModel (class in cosmos.reinforcement\_learning.models)|hyperpage}{20}
+\indexentry{\_\_call\_\_() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{20}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.ActorModel method)|hyperpage}{20}
+\indexentry{Model (class in cosmos.reinforcement\_learning.models)|hyperpage}{20}
+\indexentry{has\_state (cosmos.reinforcement\_learning.models.Model attribute)|hyperpage}{20}
+\indexentry{predict() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{20}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.models.Model method)|hyperpage}{20}
+\indexentry{cosmos.reinforcement\_learning.networks (module)|hyperpage}{20}
+\indexentry{MLP (class in cosmos.reinforcement\_learning.networks)|hyperpage}{20}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.MLP attribute)|hyperpage}{20}
+\indexentry{RNN (class in cosmos.reinforcement\_learning.networks)|hyperpage}{20}
+\indexentry{has\_state (cosmos.reinforcement\_learning.networks.RNN attribute)|hyperpage}{20}
+\indexentry{reset\_state() (cosmos.reinforcement\_learning.networks.RNN method)|hyperpage}{20}
+\indexentry{cosmos.reinforcement\_learning.tasks (module)|hyperpage}{20}
+\indexentry{EvidenceTask (class in cosmos.reinforcement\_learning.tasks)|hyperpage}{20}
+\indexentry{reset() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{21}
+\indexentry{step() (cosmos.reinforcement\_learning.tasks.EvidenceTask method)|hyperpage}{21}
+\indexentry{cosmos.reinforcement\_learning.unit\_test (module)|hyperpage}{21}
+\indexentry{UnitTest (class in cosmos.reinforcement\_learning.unit\_test)|hyperpage}{21}
+\indexentry{test\_stateful\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{21}
+\indexentry{test\_stateless\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method)|hyperpage}{21}
+\indexentry{cosmos.reinforcement\_learning.world (module)|hyperpage}{21}
+\indexentry{World (class in cosmos.reinforcement\_learning.world)|hyperpage}{21}
+\indexentry{test() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{21}
+\indexentry{train() (cosmos.reinforcement\_learning.world.World method)|hyperpage}{21}
+\indexentry{cosmos.reinforcement\_learning (module)|hyperpage}{22}
+\indexentry{cosmos.supervised\_learning.agents (module)|hyperpage}{22}
+\indexentry{SupervisedAgent (class in cosmos.supervised\_learning.agents)|hyperpage}{22}
+\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{22}
+\indexentry{reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{22}
+\indexentry{test() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{22}
+\indexentry{train() (cosmos.supervised\_learning.agents.SupervisedAgent method)|hyperpage}{22}
+\indexentry{cosmos.supervised\_learning.iterators (module)|hyperpage}{22}
+\indexentry{RandomIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{22}
+\indexentry{next() (cosmos.supervised\_learning.iterators.RandomIterator method)|hyperpage}{22}
+\indexentry{SequentialIterator (class in cosmos.supervised\_learning.iterators)|hyperpage}{22}
+\indexentry{next() (cosmos.supervised\_learning.iterators.SequentialIterator method)|hyperpage}{22}
+\indexentry{cosmos.supervised\_learning.models (module)|hyperpage}{22}
+\indexentry{Classifier (class in cosmos.supervised\_learning.models)|hyperpage}{22}
+\indexentry{Model (class in cosmos.supervised\_learning.models)|hyperpage}{22}
+\indexentry{\_\_call\_\_() (cosmos.supervised\_learning.models.Model method)|hyperpage}{23}
+\indexentry{has\_state (cosmos.supervised\_learning.models.Model attribute)|hyperpage}{23}
+\indexentry{predict() (cosmos.supervised\_learning.models.Model method)|hyperpage}{23}
+\indexentry{reset\_state() (cosmos.supervised\_learning.models.Model method)|hyperpage}{23}
+\indexentry{Regressor (class in cosmos.supervised\_learning.models)|hyperpage}{23}
+\indexentry{cosmos.supervised\_learning.networks (module)|hyperpage}{23}
+\indexentry{MLP (class in cosmos.supervised\_learning.networks)|hyperpage}{23}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.MLP attribute)|hyperpage}{23}
+\indexentry{RNN (class in cosmos.supervised\_learning.networks)|hyperpage}{23}
+\indexentry{has\_state (cosmos.supervised\_learning.networks.RNN attribute)|hyperpage}{23}
+\indexentry{reset\_state() (cosmos.supervised\_learning.networks.RNN method)|hyperpage}{23}
+\indexentry{cosmos.supervised\_learning.unit\_test (module)|hyperpage}{23}
+\indexentry{UnitTest (class in cosmos.supervised\_learning.unit\_test)|hyperpage}{23}
+\indexentry{test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{23}
+\indexentry{test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{24}
+\indexentry{test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method)|hyperpage}{24}
+\indexentry{cosmos.supervised\_learning.world (module)|hyperpage}{24}
+\indexentry{World (class in cosmos.supervised\_learning.world)|hyperpage}{24}
+\indexentry{test() (cosmos.supervised\_learning.world.World method)|hyperpage}{24}
+\indexentry{train() (cosmos.supervised\_learning.world.World method)|hyperpage}{24}
+\indexentry{cosmos.supervised\_learning (module)|hyperpage}{24}
+\indexentry{cosmos (module)|hyperpage}{24}

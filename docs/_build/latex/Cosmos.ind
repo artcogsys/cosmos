@@ -2,161 +2,172 @@
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
 
   \bigletter {Symbols}
-  \item \_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{17}, \hyperpage{23}, \hyperpage{31}
-  \item \_\_call\_\_() (cosmos.supervised\_learning.models.Model method), \hyperpage{6}, 
-		\hyperpage{16}, \hyperpage{18}, \hyperpage{24}, \hyperpage{32}
+  \item \_\_call\_\_() (cosmos.reinforcement\_learning.models.ActorModel method), \hyperpage{4}, 
+		\hyperpage{11}, \hyperpage{20}
+  \item \_\_call\_\_() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item \_\_call\_\_() (cosmos.supervised\_learning.models.Model method), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
 
   \indexspace
   \bigletter A
-  \item ActorCriticAgent (class in cosmos.reinforcement\_learning.agents), \hyperpage{3}, 
-		\hyperpage{11, 12}, \hyperpage{21}, \hyperpage{29}
+  \item ActorModel (class in cosmos.reinforcement\_learning.models), \hyperpage{4}, \hyperpage{11}, 
+		\hyperpage{20}
 
   \indexspace
   \bigletter C
-  \item Classifier (class in cosmos.supervised\_learning.models), \hyperpage{5}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item cosmos (module), \hyperpage{7}, \hyperpage{25}, \hyperpage{33}
-  \item cosmos.analysis (module), \hyperpage{3}, \hyperpage{9}, \hyperpage{21}, \hyperpage{29}
-  \item cosmos.reinforcement\_learning (module), \hyperpage{5}, \hyperpage{12}, \hyperpage{23}, 
-		\hyperpage{31}
-  \item cosmos.reinforcement\_learning.agents (module), \hyperpage{3}, \hyperpage{11, 12}, 
-		\hyperpage{21}, \hyperpage{29}
-  \item cosmos.reinforcement\_learning.iterators (module), \hyperpage{4}, \hyperpage{11}, 
-		\hyperpage{13}, \hyperpage{22}, \hyperpage{30}
-  \item cosmos.reinforcement\_learning.networks (module), \hyperpage{4}, \hyperpage{12, 13}, 
-		\hyperpage{22}, \hyperpage{30}
-  \item cosmos.reinforcement\_learning.world (module), \hyperpage{4}, \hyperpage{12, 13}, 
-		\hyperpage{22}, \hyperpage{30}
-  \item cosmos.supervised\_learning (module), \hyperpage{7}, \hyperpage{17}, \hyperpage{25}, 
-		\hyperpage{33}
-  \item cosmos.supervised\_learning.agents (module), \hyperpage{5}, \hyperpage{15}, \hyperpage{17}, 
-		\hyperpage{23}, \hyperpage{31}
-  \item cosmos.supervised\_learning.iterators (module), \hyperpage{5}, \hyperpage{15}, 
-		\hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item cosmos.supervised\_learning.models (module), \hyperpage{5}, \hyperpage{16}, \hyperpage{18}, 
-		\hyperpage{23}, \hyperpage{31}
-  \item cosmos.supervised\_learning.networks (module), \hyperpage{6}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{24}, \hyperpage{32}
-  \item cosmos.supervised\_learning.unit\_test (module), \hyperpage{6}, \hyperpage{17}, 
-		\hyperpage{19}, \hyperpage{24}, \hyperpage{32}
-  \item cosmos.supervised\_learning.world (module), \hyperpage{7}, \hyperpage{17}, \hyperpage{19}, 
-		\hyperpage{25}, \hyperpage{33}
+  \item Classifier (class in cosmos.supervised\_learning.models), \hyperpage{6}, \hyperpage{16}, 
+		\hyperpage{22}
+  \item cosmos (module), \hyperpage{8}, \hyperpage{24}
+  \item cosmos.analysis (module), \hyperpage{3}, \hyperpage{9}, \hyperpage{19}
+  \item cosmos.reinforcement\_learning (module), \hyperpage{6}, \hyperpage{13}, \hyperpage{22}
+  \item cosmos.reinforcement\_learning.agents (module), \hyperpage{3}, \hyperpage{11}, 
+		\hyperpage{19}
+  \item cosmos.reinforcement\_learning.models (module), \hyperpage{4}, \hyperpage{11}, 
+		\hyperpage{20}
+  \item cosmos.reinforcement\_learning.networks (module), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
+  \item cosmos.reinforcement\_learning.tasks (module), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
+  \item cosmos.reinforcement\_learning.unit\_test (module), \hyperpage{5}, \hyperpage{13}, 
+		\hyperpage{21}
+  \item cosmos.reinforcement\_learning.world (module), \hyperpage{5}, \hyperpage{13}, 
+		\hyperpage{21}
+  \item cosmos.supervised\_learning (module), \hyperpage{8}, \hyperpage{17}, \hyperpage{24}
+  \item cosmos.supervised\_learning.agents (module), \hyperpage{6}, \hyperpage{15}, \hyperpage{22}
+  \item cosmos.supervised\_learning.iterators (module), \hyperpage{6}, \hyperpage{15}, 
+		\hyperpage{22}
+  \item cosmos.supervised\_learning.models (module), \hyperpage{6}, \hyperpage{16}, \hyperpage{22}
+  \item cosmos.supervised\_learning.networks (module), \hyperpage{7}, \hyperpage{16}, 
+		\hyperpage{23}
+  \item cosmos.supervised\_learning.unit\_test (module), \hyperpage{7}, \hyperpage{17}, 
+		\hyperpage{23}
+  \item cosmos.supervised\_learning.world (module), \hyperpage{8}, \hyperpage{17}, \hyperpage{24}
 
   \indexspace
   \bigletter E
-  \item entropy() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method), \hyperpage{3}, 
-		\hyperpage{11}, \hyperpage{13}, \hyperpage{21}, \hyperpage{29}
-
-  \indexspace
-  \bigletter F
-  \item FooTask (class in cosmos.reinforcement\_learning.iterators), \hyperpage{4}, \hyperpage{11}, 
-		\hyperpage{13}, \hyperpage{22}, \hyperpage{30}
-
-  \indexspace
-  \bigletter G
-  \item get\_observation() (cosmos.reinforcement\_learning.iterators.FooTask method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item get\_state() (cosmos.reinforcement\_learning.iterators.FooTask method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
+  \item EvidenceTask (class in cosmos.reinforcement\_learning.tasks), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
 
   \indexspace
   \bigletter H
-  \item has\_state() (cosmos.supervised\_learning.networks.MLP method), \hyperpage{6}, 
-		\hyperpage{16}, \hyperpage{19}, \hyperpage{24}, \hyperpage{32}
-  \item has\_state() (cosmos.supervised\_learning.networks.RNN method), \hyperpage{6}, 
-		\hyperpage{16}, \hyperpage{19}, \hyperpage{24}, \hyperpage{32}
+  \item has\_state (cosmos.reinforcement\_learning.models.Model attribute), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item has\_state (cosmos.reinforcement\_learning.networks.MLP attribute), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item has\_state (cosmos.reinforcement\_learning.networks.RNN attribute), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item has\_state (cosmos.supervised\_learning.models.Model attribute), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
+  \item has\_state (cosmos.supervised\_learning.networks.MLP attribute), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
+  \item has\_state (cosmos.supervised\_learning.networks.RNN attribute), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
 
   \indexspace
   \bigletter M
-  \item MLP (class in cosmos.reinforcement\_learning.networks), \hyperpage{4}, \hyperpage{12, 13}, 
-		\hyperpage{22}, \hyperpage{30}
-  \item MLP (class in cosmos.supervised\_learning.networks), \hyperpage{6}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{24}, \hyperpage{32}
-  \item Model (class in cosmos.supervised\_learning.models), \hyperpage{5}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{23}, \hyperpage{31}
+  \item MLP (class in cosmos.reinforcement\_learning.networks), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
+  \item MLP (class in cosmos.supervised\_learning.networks), \hyperpage{7}, \hyperpage{16}, 
+		\hyperpage{23}
+  \item Model (class in cosmos.reinforcement\_learning.models), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
+  \item Model (class in cosmos.supervised\_learning.models), \hyperpage{6}, \hyperpage{16}, 
+		\hyperpage{22}
 
   \indexspace
   \bigletter N
-  \item next() (cosmos.reinforcement\_learning.iterators.FooTask method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item next() (cosmos.supervised\_learning.iterators.RandomIterator method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item next() (cosmos.supervised\_learning.iterators.SequentialIterator method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
+  \item next() (cosmos.supervised\_learning.iterators.RandomIterator method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item next() (cosmos.supervised\_learning.iterators.SequentialIterator method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
 
   \indexspace
   \bigletter P
-  \item predict() (cosmos.supervised\_learning.models.Model method), \hyperpage{6}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{24}, \hyperpage{32}
-  \item process() (cosmos.reinforcement\_learning.iterators.FooTask method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
+  \item predict() (cosmos.reinforcement\_learning.models.ActorModel method), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item predict() (cosmos.reinforcement\_learning.models.Model method), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item predict() (cosmos.supervised\_learning.models.Model method), \hyperpage{7}, \hyperpage{16}, 
+		\hyperpage{23}
 
   \indexspace
   \bigletter R
-  \item RandomIterator (class in cosmos.supervised\_learning.iterators), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item Regressor (class in cosmos.supervised\_learning.models), \hyperpage{6}, \hyperpage{16}, 
-		\hyperpage{18}, \hyperpage{24}, \hyperpage{32}
-  \item reset() (cosmos.reinforcement\_learning.networks.MLP method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item reset() (cosmos.reinforcement\_learning.networks.RNN method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item reset\_state() (cosmos.supervised\_learning.models.Model method), \hyperpage{6}, 
-		\hyperpage{16}, \hyperpage{18}, \hyperpage{24}, \hyperpage{32}
-  \item reset\_state() (cosmos.supervised\_learning.networks.MLP method), \hyperpage{6}, 
-		\hyperpage{16}, \hyperpage{19}, \hyperpage{24}, \hyperpage{32}
-  \item reset\_state() (cosmos.supervised\_learning.networks.RNN method), \hyperpage{6}, 
-		\hyperpage{17}, \hyperpage{19}, \hyperpage{24}, \hyperpage{32}
-  \item RNN (class in cosmos.reinforcement\_learning.networks), \hyperpage{4}, \hyperpage{12, 13}, 
-		\hyperpage{22}, \hyperpage{30}
-  \item RNN (class in cosmos.supervised\_learning.networks), \hyperpage{6}, \hyperpage{16}, 
-		\hyperpage{19}, \hyperpage{24}, \hyperpage{32}
-  \item run() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method), \hyperpage{3}, 
-		\hyperpage{11}, \hyperpage{13}, \hyperpage{21}, \hyperpage{29}
+  \item RandomIterator (class in cosmos.supervised\_learning.iterators), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item Regressor (class in cosmos.supervised\_learning.models), \hyperpage{7}, \hyperpage{16}, 
+		\hyperpage{23}
+  \item REINFORCEAgent (class in cosmos.reinforcement\_learning.agents), \hyperpage{3}, 
+		\hyperpage{11}, \hyperpage{19}
+  \item reset() (cosmos.reinforcement\_learning.tasks.EvidenceTask method), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{21}
+  \item reset\_state() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method), \hyperpage{3}, 
+		\hyperpage{11}, \hyperpage{19}
+  \item reset\_state() (cosmos.reinforcement\_learning.models.Model method), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item reset\_state() (cosmos.reinforcement\_learning.networks.RNN method), \hyperpage{4}, 
+		\hyperpage{12}, \hyperpage{20}
+  \item reset\_state() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item reset\_state() (cosmos.supervised\_learning.models.Model method), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
+  \item reset\_state() (cosmos.supervised\_learning.networks.RNN method), \hyperpage{7}, 
+		\hyperpage{16}, \hyperpage{23}
+  \item RNN (class in cosmos.reinforcement\_learning.networks), \hyperpage{4}, \hyperpage{12}, 
+		\hyperpage{20}
+  \item RNN (class in cosmos.supervised\_learning.networks), \hyperpage{7}, \hyperpage{16}, 
+		\hyperpage{23}
 
   \indexspace
   \bigletter S
-  \item score\_function() (cosmos.reinforcement\_learning.agents.ActorCriticAgent method), 
-		\hyperpage{3}, \hyperpage{11}, \hyperpage{13}, \hyperpage{22}, \hyperpage{30}
-  \item SequentialIterator (class in cosmos.supervised\_learning.iterators), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item SupervisedAgent (class in cosmos.supervised\_learning.agents), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{17}, \hyperpage{23}, \hyperpage{31}
+  \item score\_function() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method), 
+		\hyperpage{3}, \hyperpage{11}, \hyperpage{19}
+  \item SequentialIterator (class in cosmos.supervised\_learning.iterators), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item step() (cosmos.reinforcement\_learning.tasks.EvidenceTask method), \hyperpage{5}, 
+		\hyperpage{12}, \hyperpage{21}
+  \item SupervisedAgent (class in cosmos.supervised\_learning.agents), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
 
   \indexspace
   \bigletter T
-  \item test() (cosmos.reinforcement\_learning.world.World method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item test() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item test() (cosmos.supervised\_learning.world.World method), \hyperpage{7}, \hyperpage{17}, 
-		\hyperpage{19}, \hyperpage{25}, \hyperpage{33}
-  \item test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method), \hyperpage{6}, 
-		\hyperpage{17}, \hyperpage{19}, \hyperpage{24}, \hyperpage{32}
+  \item test() (cosmos.reinforcement\_learning.world.World method), \hyperpage{5}, \hyperpage{13}, 
+		\hyperpage{21}
+  \item test() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item test() (cosmos.supervised\_learning.world.World method), \hyperpage{8}, \hyperpage{17}, 
+		\hyperpage{24}
+  \item test\_gpu() (cosmos.supervised\_learning.unit\_test.UnitTest method), \hyperpage{7}, 
+		\hyperpage{17}, \hyperpage{23}
+  \item test\_stateful\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method), 
+		\hyperpage{5}, \hyperpage{13}, \hyperpage{21}
   \item test\_stateful\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method), 
-		\hyperpage{7}, \hyperpage{17}, \hyperpage{19}, \hyperpage{25}, \hyperpage{33}
+		\hyperpage{7}, \hyperpage{17}, \hyperpage{24}
+  \item test\_stateless\_network() (cosmos.reinforcement\_learning.unit\_test.UnitTest method), 
+		\hyperpage{5}, \hyperpage{13}, \hyperpage{21}
   \item test\_stateless\_network() (cosmos.supervised\_learning.unit\_test.UnitTest method), 
-		\hyperpage{7}, \hyperpage{17}, \hyperpage{19}, \hyperpage{25}, \hyperpage{33}
-  \item train() (cosmos.reinforcement\_learning.world.World method), \hyperpage{4}, 
-		\hyperpage{12, 13}, \hyperpage{22}, \hyperpage{30}
-  \item train() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{5}, 
-		\hyperpage{15}, \hyperpage{18}, \hyperpage{23}, \hyperpage{31}
-  \item train() (cosmos.supervised\_learning.world.World method), \hyperpage{7}, \hyperpage{17}, 
-		\hyperpage{19}, \hyperpage{25}, \hyperpage{33}
+		\hyperpage{8}, \hyperpage{17}, \hyperpage{24}
+  \item train() (cosmos.reinforcement\_learning.agents.REINFORCEAgent method), \hyperpage{3}, 
+		\hyperpage{11}, \hyperpage{19}
+  \item train() (cosmos.reinforcement\_learning.world.World method), \hyperpage{5}, \hyperpage{13}, 
+		\hyperpage{21}
+  \item train() (cosmos.supervised\_learning.agents.SupervisedAgent method), \hyperpage{6}, 
+		\hyperpage{15}, \hyperpage{22}
+  \item train() (cosmos.supervised\_learning.world.World method), \hyperpage{8}, \hyperpage{17}, 
+		\hyperpage{24}
 
   \indexspace
   \bigletter U
-  \item UnitTest (class in cosmos.supervised\_learning.unit\_test), \hyperpage{6}, \hyperpage{17}, 
-		\hyperpage{19}, \hyperpage{24}, \hyperpage{32}
+  \item UnitTest (class in cosmos.reinforcement\_learning.unit\_test), \hyperpage{5}, 
+		\hyperpage{13}, \hyperpage{21}
+  \item UnitTest (class in cosmos.supervised\_learning.unit\_test), \hyperpage{7}, \hyperpage{17}, 
+		\hyperpage{23}
 
   \indexspace
   \bigletter W
-  \item World (class in cosmos.reinforcement\_learning.world), \hyperpage{4}, \hyperpage{12, 13}, 
-		\hyperpage{22}, \hyperpage{30}
-  \item World (class in cosmos.supervised\_learning.world), \hyperpage{7}, \hyperpage{17}, 
-		\hyperpage{19}, \hyperpage{25}, \hyperpage{33}
+  \item World (class in cosmos.reinforcement\_learning.world), \hyperpage{5}, \hyperpage{13}, 
+		\hyperpage{21}
+  \item World (class in cosmos.supervised\_learning.world), \hyperpage{8}, \hyperpage{17}, 
+		\hyperpage{24}
 
 \end{theindex}

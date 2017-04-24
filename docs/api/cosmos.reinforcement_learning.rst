@@ -12,10 +12,10 @@ cosmos.reinforcement_learning.agents module
     :undoc-members:
     :show-inheritance:
 
-cosmos.reinforcement_learning.iterators module
-----------------------------------------------
+cosmos.reinforcement_learning.models module
+-------------------------------------------
 
-.. automodule:: cosmos.reinforcement_learning.iterators
+.. automodule:: cosmos.reinforcement_learning.models
     :members:
     :undoc-members:
     :show-inheritance:
@@ -24,6 +24,14 @@ cosmos.reinforcement_learning.networks module
 ---------------------------------------------
 
 .. automodule:: cosmos.reinforcement_learning.networks
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cosmos.reinforcement_learning.tasks module
+------------------------------------------
+
+.. automodule:: cosmos.reinforcement_learning.tasks
     :members:
     :undoc-members:
     :show-inheritance:

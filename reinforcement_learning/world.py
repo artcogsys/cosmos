@@ -1,15 +1,21 @@
 import tqdm
 import numpy as np
 import copy
+import os
 
 import chainer
 
 class World(object):
+    """
+    Wrapper object which takes care of training and testing on some data iterator for one or more agents
+    """
 
-    def __init__(self, agents):
+    def __init__(self, agents, out='result'):
         """ A world is inhabited by one or more agents
 
-        :param agents:
+        Args:
+            agents: Agents that are run on this world
+            out: output folder
         """
 
         if not isinstance(agents, list):
@@ -19,53 +25,77 @@ class World(object):
 
         self.n_agents = len(self.agents)
 
-    def train(self, train_iter, n_epochs, test_iter=None):
+        self.out = out
+        if not self.out is None:
+            try:
+                os.makedirs(self.out)
+            except OSError:
+                pass
 
-        train_loss = np.zeros([n_epochs, self.n_agents])
+    def train(self, task, n_steps, snapshot=0):
+        """
+        
+        Args:
+            task: task to run agent(s) on
+            n_steps (int): number of steps to train on
+            snapshot (int): whether or not to save model after each epochs modulo snapshot
+        
+        Returns:
+            rewards
+        """
 
-        validate = not test_iter is None
-        if validate:
-            min_loss = np.inf*np.ones(self.n_agents)
-            test_loss = np.zeros([n_epochs, self.n_agents])/0
-            _optimal_model = [None for i in range(self.n_agents)]
+        rewards = np.zeros(n_steps)
 
-        for epoch in tqdm.tqdm(xrange(n_epochs)):
+        with chainer.using_config('train', True):
 
-            map(lambda x: x.reset(), self.agents)
+            map(lambda x: x.reset_state(), self.agents)
 
-            with chainer.using_config('train', True):
+            obs, reward, done = task.reset()
 
-                for data in train_iter:
+            for step in tqdm.tqdm(xrange(n_steps)):
 
-                    train_loss[epoch] += map(lambda x: x.train(data), self.agents)
+                # train step
+                actions = map(lambda x: x.train(obs, reward, done), self.agents)
 
-            # run validation
-            if validate:
+                # update step
+                obs, reward, done = task.step(actions)
 
-                test_loss[epoch] = self.test(test_iter)
+                rewards[step] = reward
 
-                # store best model in case loss was minimized
-                for i in range(self.n_agents):
-                    if test_loss[epoch,i] < min_loss[i]:
-                        _optimal_model[i] = copy.deepcopy(self.agents[i].net)
-                        min_loss[i] = test_loss[epoch,i]
+                # store model every snapshot steps
+                if snapshot and step % snapshot == 0:
+                    for i in range(self.n_agents):
+                        self.agents[i].model.save(os.path.join(self.out, 'agent-{0:04d}-epoch-{1:04d}'.format(i, step)))
 
-        # set models to optimal models based on test loss
-        if validate:
-            for i in range(self.n_agents):
-                self.agents[i].net = copy.deepcopy(_optimal_model[i])
+        return rewards
 
-        return train_loss, test_loss
+    def test(self, task, n_steps):
+        """
+        
+        Args:
+            task: task to run agent(s) on
+            n_steps (int): number of steps to train on
+       
+        Returns:
+            test loss and reward
+        """
 
-    def test(self, test_iter):
-
-        test_loss =  np.zeros([1, self.n_agents])
-
-        map(lambda x: x.reset(), self.agents)
+        rewards = np.zeros(n_steps)
 
         with chainer.using_config('train', False):
 
-            for data in test_iter:
-                test_loss += map(lambda x: x.test(data), self.agents)
+            map(lambda x: x.reset_state(), self.agents)
 
-        return test_loss
+            obs, reward, done = task.reset()
+
+            for step in tqdm.tqdm(xrange(n_steps)):
+
+                # test step
+                actions = map(lambda x: x.test(obs, reward, done), self.agents)
+
+                # update step
+                obs, reward, done = task.step(actions)
+
+                rewards[step] = reward
+
+        return rewards

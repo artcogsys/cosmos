@@ -57,11 +57,11 @@ class World(object):
 
             map(lambda x: x.reset_state(), self.agents)
 
-            # train step
             with chainer.using_config('train', True):
 
                 for data in train_iter:
 
+                    # train step
                     train_loss[epoch] += map(lambda x: x.train(data), self.agents)
 
             # store model every snapshot epochs
