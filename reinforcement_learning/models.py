@@ -71,3 +71,41 @@ class ActorModel(Model):
         action = self.xp.asarray([np.random.choice(p.shape[1], None, True, p[0])])
 
         return action, policy
+
+
+class ActorCriticModel(Model):
+    """
+    An actor model computes the action and policy from a predictor
+    """
+
+    def __init__(self, net, gpu=-1):
+        super(ActorCriticModel, self).__init__(net, gpu=gpu)
+
+    def __call__(self, data):
+        """
+
+        Args:
+            data: observation
+
+        Returns:
+            action and policy
+        """
+
+        out = self.predictor(Variable(self.xp.asarray(data)))
+
+        # linear outputs reflecting the log action probabilities and the value
+        policy = out[:, :-1]
+
+        # final element is the value
+        value = out[:, -1]
+
+        # generate action according to policy
+        p = F.softmax(policy).data
+
+        # normalize p in case tiny floating precision problems occur
+        row_sums = p.sum(axis=1)
+        p /= row_sums[:, np.newaxis]
+
+        action = self.xp.asarray([np.random.choice(p.shape[1], None, True, p[0])])
+
+        return action, policy, value
