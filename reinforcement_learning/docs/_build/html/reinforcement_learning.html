@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>reinforcement_learning package &mdash; Cosmos 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Cosmos 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Cosmos’s documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reinforcement-learning-package">
+<h1>reinforcement_learning package<a class="headerlink" href="#reinforcement-learning-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-reinforcement_learning.agents">
+<span id="reinforcement-learning-agents-module"></span><h2>reinforcement_learning.agents module<a class="headerlink" href="#module-reinforcement_learning.agents" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.agents.AACAgent">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.agents.</code><code class="descname">AACAgent</code><span class="sig-paren">(</span><em>model</em>, <em>optimizer=None</em>, <em>gamma=0.99</em>, <em>beta=0.01</em>, <em>cutoff=None</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.AACAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#reinforcement_learning.agents.REINFORCEAgent" title="reinforcement_learning.agents.REINFORCEAgent"><code class="xref py py-class docutils literal"><span class="pre">reinforcement_learning.agents.REINFORCEAgent</span></code></a></p>
+<p>Implements Advantage Actor-Critic algorithm</p>
+<dl class="method">
+<dt id="reinforcement_learning.agents.AACAgent.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>observation</em>, <em>reward</em>, <em>done</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.AACAgent.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains agent on cumulated reward (return)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">action (Variable)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="reinforcement_learning.agents.NESAgent">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.agents.</code><code class="descname">NESAgent</code><span class="sig-paren">(</span><em>model</em>, <em>nsteps=100</em>, <em>npop=50</em>, <em>sigma=0.1</em>, <em>alpha=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.NESAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements Natural Evolution Strategies algorithm</p>
+<p><a class="reference external" href="https://blog.openai.com/evolution-strategies/">https://blog.openai.com/evolution-strategies/</a>
+<a class="reference external" href="https://gist.github.com/karpathy/77fbb6a8dac5395f1b73e7a89300318d">https://gist.github.com/karpathy/77fbb6a8dac5395f1b73e7a89300318d</a></p>
+<p>hard to implement in same framework since the agent needs to run multiple versions of the task</p>
+<dl class="method">
+<dt id="reinforcement_learning.agents.NESAgent.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>observation</em>, <em>reward</em>, <em>done</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.NESAgent.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains agent on cumulated reward (return)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">action (Variable)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="reinforcement_learning.agents.REINFORCEAgent">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.agents.</code><code class="descname">REINFORCEAgent</code><span class="sig-paren">(</span><em>model</em>, <em>optimizer=None</em>, <em>gamma=0.99</em>, <em>beta=0.01</em>, <em>cutoff=None</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements REINFORCE algorithm</p>
+<dl class="method">
+<dt id="reinforcement_learning.agents.REINFORCEAgent.entropy">
+<code class="descname">entropy</code><span class="sig-paren">(</span><em>pi</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes entropy of policy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>policy</strong> &#8211; </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.agents.REINFORCEAgent.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets persistent states</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.agents.REINFORCEAgent.score_function">
+<code class="descname">score_function</code><span class="sig-paren">(</span><em>action</em>, <em>policy</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent.score_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes score</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>action</strong> (<em>int</em>) &#8211; </li>
+<li><strong>policy</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">score</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.agents.REINFORCEAgent.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>observation</em>, <em>reward</em>, <em>done</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests agent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">action (Variable)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.agents.REINFORCEAgent.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>observation</em>, <em>reward</em>, <em>done</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.agents.REINFORCEAgent.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains agent on cumulated reward (return)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">action (Variable)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning.models">
+<span id="reinforcement-learning-models-module"></span><h2>reinforcement_learning.models module<a class="headerlink" href="#module-reinforcement_learning.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.models.ActorCriticModel">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.models.</code><code class="descname">ActorCriticModel</code><span class="sig-paren">(</span><em>net</em>, <em>gpu=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.ActorCriticModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#reinforcement_learning.models.Model" title="reinforcement_learning.models.Model"><code class="xref py py-class docutils literal"><span class="pre">reinforcement_learning.models.Model</span></code></a></p>
+<p>An actor model computes the action and policy from a predictor</p>
+<dl class="method">
+<dt id="reinforcement_learning.models.ActorCriticModel.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.ActorCriticModel.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; observation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">action and policy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="reinforcement_learning.models.ActorModel">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.models.</code><code class="descname">ActorModel</code><span class="sig-paren">(</span><em>net</em>, <em>gpu=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.ActorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#reinforcement_learning.models.Model" title="reinforcement_learning.models.Model"><code class="xref py py-class docutils literal"><span class="pre">reinforcement_learning.models.Model</span></code></a></p>
+<p>An actor model computes the action and policy from a predictor</p>
+<dl class="method">
+<dt id="reinforcement_learning.models.ActorModel.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.ActorModel.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; observation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">action and policy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="reinforcement_learning.models.Model">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.models.</code><code class="descname">Model</code><span class="sig-paren">(</span><em>net</em>, <em>gpu=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
+<p>Model which wraps a network to generate predictions and compute policies</p>
+<dl class="attribute">
+<dt id="reinforcement_learning.models.Model.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#reinforcement_learning.models.Model.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.models.Model.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.Model.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an action</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.models.Model.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.models.Model.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning.networks">
+<span id="reinforcement-learning-networks-module"></span><h2>reinforcement_learning.networks module<a class="headerlink" href="#module-reinforcement_learning.networks" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.networks.MLP">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.networks.</code><code class="descname">MLP</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.networks.MLP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
+<p>Multilayer perceptron</p>
+<dl class="attribute">
+<dt id="reinforcement_learning.networks.MLP.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#reinforcement_learning.networks.MLP.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="reinforcement_learning.networks.RNN">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.networks.</code><code class="descname">RNN</code><span class="sig-paren">(</span><em>n_input=None</em>, <em>n_output=1</em>, <em>n_hidden=10</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.networks.RNN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">chainer.link.Chain</span></code></p>
+<dl class="attribute">
+<dt id="reinforcement_learning.networks.RNN.has_state">
+<code class="descname">has_state</code><a class="headerlink" href="#reinforcement_learning.networks.RNN.has_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a network has persistent states</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.networks.RNN.reset_state">
+<code class="descname">reset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.networks.RNN.reset_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets persistent states</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning.tasks">
+<span id="reinforcement-learning-tasks-module"></span><h2>reinforcement_learning.tasks module<a class="headerlink" href="#module-reinforcement_learning.tasks" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.tasks.EvidenceTask">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.tasks.</code><code class="descname">EvidenceTask</code><span class="sig-paren">(</span><em>n=2</em>, <em>p=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.tasks.EvidenceTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Very simple task which only requires evaluating present evidence and does not require evidence integration.
+The actor gets a reward when it correctly decides on the ground truth. Ground truth 0/1 determines probabilistically
+the number of 0s or 1s as observations</p>
+<dl class="method">
+<dt id="reinforcement_learning.tasks.EvidenceTask.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.tasks.EvidenceTask.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets state and generates new observations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">observations, reward, done</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.tasks.EvidenceTask.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.tasks.EvidenceTask.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>This task always produces a new state and observation after each decision</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> &#8211; agent(s) action</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning.unit_test">
+<span id="reinforcement-learning-unit-test-module"></span><h2>reinforcement_learning.unit_test module<a class="headerlink" href="#module-reinforcement_learning.unit_test" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.unit_test.UnitTest">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.unit_test.</code><code class="descname">UnitTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.unit_test.UnitTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="reinforcement_learning.unit_test.UnitTest.test_aac_stateful">
+<code class="descname">test_aac_stateful</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.unit_test.UnitTest.test_aac_stateful" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test Advantage Actor-Critic on stateful network</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.unit_test.UnitTest.test_reinforce_stateful">
+<code class="descname">test_reinforce_stateful</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.unit_test.UnitTest.test_reinforce_stateful" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test REINFORCE on stateful network</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.unit_test.UnitTest.test_reinforce_stateless">
+<code class="descname">test_reinforce_stateless</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.unit_test.UnitTest.test_reinforce_stateless" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test REINFORCE on stateless network</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning.world">
+<span id="reinforcement-learning-world-module"></span><h2>reinforcement_learning.world module<a class="headerlink" href="#module-reinforcement_learning.world" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="reinforcement_learning.world.World">
+<em class="property">class </em><code class="descclassname">reinforcement_learning.world.</code><code class="descname">World</code><span class="sig-paren">(</span><em>agents</em>, <em>out='result'</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.world.World" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Wrapper object which takes care of training and testing on some data iterator for one or more agents</p>
+<dl class="method">
+<dt id="reinforcement_learning.world.World.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>task</em>, <em>n_steps</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.world.World.test" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>task</strong> &#8211; task to run agent(s) on</li>
+<li><strong>n_steps</strong> (<em>int</em>) &#8211; number of steps to train on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">test loss and reward</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="reinforcement_learning.world.World.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>task</em>, <em>n_steps</em>, <em>snapshot=0</em><span class="sig-paren">)</span><a class="headerlink" href="#reinforcement_learning.world.World.train" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>task</strong> &#8211; task to run agent(s) on</li>
+<li><strong>n_steps</strong> (<em>int</em>) &#8211; number of steps to train on</li>
+<li><strong>snapshot</strong> (<em>int</em>) &#8211; whether or not to save model after each epochs modulo snapshot</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">rewards</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-reinforcement_learning">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-reinforcement_learning" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">reinforcement_learning package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.agents">reinforcement_learning.agents module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.models">reinforcement_learning.models module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.networks">reinforcement_learning.networks module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.tasks">reinforcement_learning.tasks module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.unit_test">reinforcement_learning.unit_test module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning.world">reinforcement_learning.world module</a></li>
+<li><a class="reference internal" href="#module-reinforcement_learning">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Cosmos&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/reinforcement_learning.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Marcel van Gerven.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/reinforcement_learning.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

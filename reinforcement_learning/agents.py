@@ -261,3 +261,52 @@ class AACAgent(REINFORCEAgent):
         self.values.append(value)
 
         return cuda.to_cpu(action)
+
+class NESAgent(object):
+    """
+
+    Implements Natural Evolution Strategies algorithm
+
+    https://blog.openai.com/evolution-strategies/
+    https://gist.github.com/karpathy/77fbb6a8dac5395f1b73e7a89300318d
+    
+    hard to implement in same framework since the agent needs to run multiple versions of the task
+
+    """
+
+    def __init__(self, model, nsteps=100, npop=50, sigma=0.1, alpha=0.001):
+        """
+
+        Args:
+            model:
+            nsteps (100): number of steps to accumulate reward
+            npop (50): population size
+            sigma (0.1): noise standard deviation
+            alpha (0.001): learning rate
+        """
+
+        self.model = model
+        self.nsteps = nsteps
+        self.npop = npop
+        self.sigma = sigma
+        self.alpha = alpha
+
+        self.population = [self.model.copy() for i in range(self.npop)]
+
+        self.rewards = np.zeros(self.npop)
+
+        self.counter = 0
+
+    def train(self, observation, reward, done):
+        """
+        Trains agent on cumulated reward (return)
+
+        Returns:
+            action (Variable)
+        """
+
+        if self.counter == 0:
+            self.reset_population()
+
+        action = self.predict(observation)
+

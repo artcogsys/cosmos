@@ -57,7 +57,7 @@ class World(object):
                 # train step
                 actions = map(lambda x: x.train(obs, reward, done), self.agents)
 
-                # update step
+                # update step - need to rethink how this works in multiagent settings
                 obs, reward, done = task.step(actions)
 
                 rewards[step] = reward

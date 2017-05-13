@@ -25,6 +25,13 @@ class Model(Chain):
     def __call__(self, data):
         raise NotImplementedError
 
+    def predict(self, data):
+        """
+        Returns an action
+        """
+
+        return self(data)[0]
+
     @property
     def has_state(self):
         """
@@ -109,3 +116,4 @@ class ActorCriticModel(Model):
         action = self.xp.asarray([np.random.choice(p.shape[1], None, True, p[0])])
 
         return action, policy, value
+

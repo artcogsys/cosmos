@@ -1,0 +1,17 @@
+# instructions for document generation:
+mkdir docs
+cd docs
+sphinx-quickstart => say yes on autodoc, mathpng and mathjax; say no create windows command file
+sphinx-apidoc -FP ~/Code/github/cosmos/supervised_learning -o .
+# add in conf.py:
+sys.path.insert(0, os.path.abspath('../..'))
+# add in conf.py:
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.napoleon',
+]
+# napoleon ensures support for google style docstrings (which is the convention we will use)
+# modify index.rst: add :glob: and then add reinforcement_learning
+make html
+make latexpdf
