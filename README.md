@@ -1,4 +1,4 @@
 # CoMoS
 
-Cognitive Modeling Suite. Codebase for neural network modeling.
+Cognitive Modeling Suite. Codebase for neural network modeling. 
 
