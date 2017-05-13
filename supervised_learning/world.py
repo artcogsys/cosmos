@@ -32,7 +32,7 @@ class World(object):
             except OSError:
                 pass
 
-    def train(self, train_iter, n_epochs, test_iter=None, snapshot=0):
+    def train(self, train_iter, n_epochs, test_iter=None, snapshot=0, monitor=None):
         """
         
         Args:
@@ -40,7 +40,8 @@ class World(object):
             n_epochs (int): number of epochs to train on
             test_iter: optional iterator over the test data (returns optimal model)
             snapshot (int): whether or not to save model after each epochs modulo snapshot
-        
+            monitor: optional analysis monitor to store variables 
+                   
         Returns:
             train loss and optional test loss
         """
@@ -63,6 +64,9 @@ class World(object):
 
                     # train step
                     train_loss[epoch] += map(lambda x: x.train(data), self.agents)
+
+                    if not monitor is None:
+                        monitor.store()
 
             # store model every snapshot epochs
             if snapshot and epoch % snapshot == 0:
@@ -87,11 +91,12 @@ class World(object):
 
         return train_loss, test_loss
 
-    def test(self, test_iter):
+    def test(self, test_iter, monitor = None):
         """
         
         Args:
             test_iter: iterator over the test data
+            monitor: optional analysis monitor to store variables 
         
         Returns:
             test loss
@@ -105,5 +110,8 @@ class World(object):
 
             for data in test_iter:
                 test_loss += map(lambda x: x.test(data), self.agents)
+
+                if not monitor is None:
+                    monitor.store()
 
         return test_loss
