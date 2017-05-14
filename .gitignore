@@ -1,4 +1,5 @@
 .idea
+.gitignore
 sandbox/
 reinforcement_learning/docs/_static/
 reinforcement_learning/docs/_templates/
