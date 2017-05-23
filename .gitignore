@@ -1,9 +1,0 @@
-.idea
-.gitignore
-sandbox/
-reinforcement_learning/docs/_static/
-reinforcement_learning/docs/_templates/
-reinforcement_learning/result/
-supervised_learning/docs/_static/
-supervised_learning/docs/_templates/
-supervised_learning/result/

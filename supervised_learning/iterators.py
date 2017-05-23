@@ -54,6 +54,9 @@ class SequentialIterator(object):
 
         self.data = data
 
+        if batch_size is None:
+            batch_size = 1
+
         self.batch_size = batch_size
         self.n_batches = len(self.data) // batch_size
 
